@@ -1,0 +1,1084 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://samaritan-proxy.github.io/arch/stats/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Stats - Samaritan Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="black">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" id="__gitlab"><path fill="currentColor" d="M93.667 473.347l90.684-279.097H2.983l90.684 279.097z" transform="translate(156.198 1.16)"/><path fill="currentColor" d="M221.333 473.345L130.649 194.25H3.557l217.776 279.095z" transform="translate(28.531 1.16)" opacity=".7"/><path fill="currentColor" d="M32 195.155L4.441 279.97a18.773 18.773 0 0 0 6.821 20.99l238.514 173.29L32 195.155z" transform="translate(.089 .256)" opacity=".5"/><path fill="currentColor" d="M2.667-84.844h127.092L75.14-252.942c-2.811-8.649-15.047-8.649-17.856 0L2.667-84.844z" transform="translate(29.422 280.256)"/><path fill="currentColor" d="M2.667 473.345L93.351 194.25h127.092L2.667 473.345z" transform="translate(247.198 1.16)" opacity=".7"/><path fill="currentColor" d="M221.334 195.155l27.559 84.815a18.772 18.772 0 0 1-6.821 20.99L3.557 474.25l217.777-279.095z" transform="translate(246.307 .256)" opacity=".5"/><path fill="currentColor" d="M130.667-84.844H3.575l54.618-168.098c2.811-8.649 15.047-8.649 17.856 0l54.618 168.098z" transform="translate(336.974 280.256)"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#stats" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://samaritan-proxy.github.io" title="Samaritan Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Samaritan Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Stats
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://gitlab.alibaba-inc.com/eleme-infra/samaritan" title="Go to repository" class="md-source" data-md-source="gitlab">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__gitlab" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    eleme-infra/samaritan
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://samaritan-proxy.github.io" title="Samaritan Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Samaritan Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://gitlab.alibaba-inc.com/eleme-infra/samaritan" title="Go to repository" class="md-source" data-md-source="gitlab">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__gitlab" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    eleme-infra/samaritan
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../start/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3" checked>
+    
+    <label class="md-nav__link" for="nav-3">
+      Architecture
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../admin-api/" title="Admin API" class="md-nav__link">
+      Admin API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Stats
+      </label>
+    
+    <a href="./" title="Stats" class="md-nav__link md-nav__link--active">
+      Stats
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    Statistics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global" class="md-nav__link">
+    Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    Runtime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    Common
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l4" class="md-nav__link">
+    L4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l7" class="md-nav__link">
+    L7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protocol/tcp/" title="TCP" class="md-nav__link">
+      TCP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-2" type="checkbox" id="nav-3-4-2">
+    
+    <label class="md-nav__link" for="nav-3-4-2">
+      Redis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-2">
+        Redis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../protocol/redis/redis/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../changelog/" title="Changelog" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../proto-ref/" title="Proto Reference" class="md-nav__link">
+      Proto Reference
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#statistics" class="md-nav__link">
+    Statistics
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global" class="md-nav__link">
+    Global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#runtime" class="md-nav__link">
+    Runtime
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#common" class="md-nav__link">
+    Common
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#l4" class="md-nav__link">
+    L4
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#l7" class="md-nav__link">
+    L7
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="stats">Stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h1>
+<p>Samaritan provide detailed metrics about connection and request which could help us understand the state of network and services, make decisions.</p>
+<blockquote>
+<p>Types of statistics:</p>
+<ul>
+<li>
+<p>Counters: Unsigned integers that only increase and never decrease.</p>
+</li>
+<li>
+<p>Gauges: Unsigned integers that both increase and decrease.</p>
+</li>
+<li>
+<p>Histograms: Unsigned integers that are part of a stream of values that are then aggregated by the collector to ultimately yield summarized percentile values.</p>
+</li>
+</ul>
+</blockquote>
+<h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h2>
+<h3 id="global">Global<a class="headerlink" href="#global" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>live</td>
+<td>Gauge</td>
+<td>live status</td>
+</tr>
+</tbody>
+</table>
+<h3 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>runtime.gc_total</td>
+<td>Counter</td>
+<td>Count of GC</td>
+</tr>
+<tr>
+<td>runtime.gc_pause_us</td>
+<td>Histogram</td>
+<td>GC pause duration</td>
+</tr>
+<tr>
+<td>runtime.goroutines</td>
+<td>Gauge</td>
+<td>Num of goroutines</td>
+</tr>
+<tr>
+<td>runtime.gc_pause_total_ms</td>
+<td>Gauge</td>
+<td>Total gc pause time</td>
+</tr>
+<tr>
+<td>runtime.alloc_bytes</td>
+<td>Gauge</td>
+<td>Alloc is bytes of allocated heap objects</td>
+</tr>
+<tr>
+<td>runtime.total_alloc_bytes</td>
+<td>Gauge</td>
+<td>Cumulative bytes allocated for heap objects</td>
+</tr>
+<tr>
+<td>runtime.sys_bytes</td>
+<td>Gauge</td>
+<td>Total bytes of memory obtained from the OS</td>
+</tr>
+<tr>
+<td>runtime.heap_alloc_bytes</td>
+<td>Gauge</td>
+<td>HeapAlloc is bytes of allocated heap objects</td>
+</tr>
+<tr>
+<td>runtime.heap_sys_bytes</td>
+<td>Gauge</td>
+<td>Bytes of heap memory obtained from the OS</td>
+</tr>
+<tr>
+<td>runtime.heap_idle_bytes</td>
+<td>Gauge</td>
+<td>Bytes in idle (unused) spans</td>
+</tr>
+<tr>
+<td>runtime.heap_inuse_bytes</td>
+<td>Gauge</td>
+<td>Bytes in in-use spans</td>
+</tr>
+<tr>
+<td>runtime.heap_released_bytes</td>
+<td>Gauge</td>
+<td>Bytes of physical memory returned to the OS</td>
+</tr>
+<tr>
+<td>runtime.heap_objects</td>
+<td>Gauge</td>
+<td>The number of allocated heap objects</td>
+</tr>
+<tr>
+<td>runtime.stack_inuse_bytes</td>
+<td>Gauge</td>
+<td>Bytes in stack spans</td>
+</tr>
+<tr>
+<td>runtime.stack_sys_bytes</td>
+<td>Gauge</td>
+<td>Bytes of stack memory obtained from the OS</td>
+</tr>
+<tr>
+<td>runtime.lookups</td>
+<td>Gauge</td>
+<td>The number of pointer lookups performed by the runtime</td>
+</tr>
+<tr>
+<td>runtime.mallocs</td>
+<td>Gauge</td>
+<td>The cumulative count of heap objects allocated</td>
+</tr>
+<tr>
+<td>runtime.frees</td>
+<td>Gauge</td>
+<td>The cumulative count of heap objects freed</td>
+</tr>
+</tbody>
+</table>
+<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<h4 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h4>
+<h5 id="l4">L4<a class="headerlink" href="#l4" title="Permanent link">&para;</a></h5>
+<p>prefix: service.{service_name}.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>downstream.cx_total</td>
+<td>Counter</td>
+<td>downstream total connections</td>
+</tr>
+<tr>
+<td>downstream.cx_destroy_total</td>
+<td>Counter</td>
+<td>downstream destroyed connections</td>
+</tr>
+<tr>
+<td>downstream.cx_active</td>
+<td>Gauge</td>
+<td>downstream active connections</td>
+</tr>
+<tr>
+<td>downstream.cx_length_sec</td>
+<td>Histogram</td>
+<td>downstream connection length</td>
+</tr>
+<tr>
+<td>downstream.cx_rx_bytes_total</td>
+<td>Counter</td>
+<td>downstream received connection bytes</td>
+</tr>
+<tr>
+<td>downstream.cx_tx_bytes_total</td>
+<td>Counter</td>
+<td>downstream sent connection bytes</td>
+</tr>
+<tr>
+<td>downstream.cx_restricted</td>
+<td>Counter</td>
+<td>downstream restricted connections</td>
+</tr>
+<tr>
+<td>upstream.cx_total</td>
+<td>Counter</td>
+<td>upstream total connections</td>
+</tr>
+<tr>
+<td>upstream.cx_destroy_total</td>
+<td>Counter</td>
+<td>upstream destroyed connections</td>
+</tr>
+<tr>
+<td>upstream.cx_active</td>
+<td>Counter</td>
+<td>upstream active connections</td>
+</tr>
+<tr>
+<td>upstream.cx_length_sec</td>
+<td>Histogram</td>
+<td>upstream connection length</td>
+</tr>
+<tr>
+<td>upstream.cx_rx_bytes_total</td>
+<td>Counter</td>
+<td>upstream received connection bytes</td>
+</tr>
+<tr>
+<td>upstream.cx_tx_bytes_total</td>
+<td>Counter</td>
+<td>upstream sent connection bytes</td>
+</tr>
+<tr>
+<td>upstream.cx_connect_timeout</td>
+<td>Counter</td>
+<td>upstream total connection connect timeouts</td>
+</tr>
+<tr>
+<td>upstream.cx_connect_fail</td>
+<td>Counter</td>
+<td>upstream connection failures</td>
+</tr>
+</tbody>
+</table>
+<h5 id="l7">L7<a class="headerlink" href="#l7" title="Permanent link">&para;</a></h5>
+<p>prefix: service.{service_name}.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>downstream.rq_total</td>
+<td>Counter</td>
+<td>downstream total request</td>
+</tr>
+<tr>
+<td>downstream.rq_success_total</td>
+<td>Counter</td>
+<td>downstream success request</td>
+</tr>
+<tr>
+<td>downstream.rq_failure_total</td>
+<td>Counter</td>
+<td>downstream failed request</td>
+</tr>
+<tr>
+<td>downstream.rq_active</td>
+<td>Gauge</td>
+<td>downstream active request</td>
+</tr>
+<tr>
+<td>downstream.rq_duration_ms</td>
+<td>Histogram</td>
+<td>downstream request duration</td>
+</tr>
+<tr>
+<td>downstream.rq_rx_bytes_length</td>
+<td>Histogram</td>
+<td>downstream received request bytes length</td>
+</tr>
+<tr>
+<td>downstream.rq_tx_bytes_length</td>
+<td>Histogram</td>
+<td>downstream sent request bytes length</td>
+</tr>
+<tr>
+<td>upstream.rq_total</td>
+<td>Counter</td>
+<td>upstream total request</td>
+</tr>
+<tr>
+<td>upstream.rq_success_total</td>
+<td>Counter</td>
+<td>upstream success request</td>
+</tr>
+<tr>
+<td>upstream.rq_failure_total</td>
+<td>Counter</td>
+<td>upstream failed request</td>
+</tr>
+<tr>
+<td>upstream.rq_active</td>
+<td>Gauge</td>
+<td>upstream active request</td>
+</tr>
+<tr>
+<td>upstream.rq_duration_ms</td>
+<td>Histogram</td>
+<td>upstream request duration</td>
+</tr>
+<tr>
+<td>upstream.rq_rx_bytes_length</td>
+<td>Histogram</td>
+<td>upstream received request bytes length</td>
+</tr>
+<tr>
+<td>upstream.rq_tx_bytes_length</td>
+<td>Histogram</td>
+<td>upstream sent request bytes length</td>
+</tr>
+</tbody>
+</table>
+<h4 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h4>
+<p>prefix: service.{service_name}.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>slots_refresh.total</td>
+<td>Counter</td>
+<td>slots refresh total count</td>
+</tr>
+<tr>
+<td>slots_refresh.success_total</td>
+<td>Counter</td>
+<td>slots refresh success count</td>
+</tr>
+<tr>
+<td>slots_refresh.failure_total</td>
+<td>Counter</td>
+<td>slots refresh failure count</td>
+</tr>
+<tr>
+<td>redis.{COMMAND}.total</td>
+<td>Counter</td>
+<td>{COMMAND} total count</td>
+</tr>
+<tr>
+<td>redis.{COMMAND}.success</td>
+<td>Counter</td>
+<td>{COMMAND} success count</td>
+</tr>
+<tr>
+<td>redis.{COMMAND}.error</td>
+<td>Counter</td>
+<td>{COMMAND} error count</td>
+</tr>
+<tr>
+<td>redis.{COMMAND}.latency_micros</td>
+<td>Histogram</td>
+<td>{COMMAND} latency micros</td>
+</tr>
+<tr>
+<td>redis.moved</td>
+<td>Counter</td>
+<td>MOVED count</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../admin-api/" title="Admin API" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Admin API
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../protocol/tcp/" title="TCP" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                TCP
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Samaritan Developers
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../../js/umlconvert.js"></script>
+      
+    
+  </body>
+</html>

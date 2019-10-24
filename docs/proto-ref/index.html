@@ -1,0 +1,2701 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+        <link rel="canonical" href="https://samaritan-proxy.github.io/proto-ref/">
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Proto Reference - Samaritan Documentation</title>
+      
+    
+    
+      <link rel="stylesheet" href="../assets/stylesheets/application.30686662.css">
+      
+        <link rel="stylesheet" href="../assets/stylesheets/application-palette.a8b3c06d.css">
+      
+      
+        
+        
+        <meta name="theme-color" content="">
+      
+    
+    
+      <script src="../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    
+    
+    <body dir="ltr" data-md-color-primary="black" data-md-color-accent="black">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+          <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" id="__gitlab"><path fill="currentColor" d="M93.667 473.347l90.684-279.097H2.983l90.684 279.097z" transform="translate(156.198 1.16)"/><path fill="currentColor" d="M221.333 473.345L130.649 194.25H3.557l217.776 279.095z" transform="translate(28.531 1.16)" opacity=".7"/><path fill="currentColor" d="M32 195.155L4.441 279.97a18.773 18.773 0 0 0 6.821 20.99l238.514 173.29L32 195.155z" transform="translate(.089 .256)" opacity=".5"/><path fill="currentColor" d="M2.667-84.844h127.092L75.14-252.942c-2.811-8.649-15.047-8.649-17.856 0L2.667-84.844z" transform="translate(29.422 280.256)"/><path fill="currentColor" d="M2.667 473.345L93.351 194.25h127.092L2.667 473.345z" transform="translate(247.198 1.16)" opacity=".7"/><path fill="currentColor" d="M221.334 195.155l27.559 84.815a18.772 18.772 0 0 1-6.821 20.99L3.557 474.25l217.777-279.095z" transform="translate(246.307 .256)" opacity=".5"/><path fill="currentColor" d="M130.667-84.844H3.575l54.618-168.098c2.811-8.649 15.047-8.649 17.856 0l54.618 168.098z" transform="translate(336.974 280.256)"/></svg>
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#protocol-documentation" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="https://samaritan-proxy.github.io" title="Samaritan Documentation" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              Samaritan Documentation
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Proto Reference
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+        <div class="md-flex__cell md-flex__cell--shrink">
+          <div class="md-header-nav__source">
+            
+
+
+  
+
+<a href="http://gitlab.alibaba-inc.com/eleme-infra/samaritan" title="Go to repository" class="md-source" data-md-source="gitlab">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__gitlab" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    eleme-infra/samaritan
+  </div>
+</a>
+          </div>
+        </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="https://samaritan-proxy.github.io" title="Samaritan Documentation" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    Samaritan Documentation
+  </label>
+  
+    <div class="md-nav__source">
+      
+
+
+  
+
+<a href="http://gitlab.alibaba-inc.com/eleme-infra/samaritan" title="Go to repository" class="md-source" data-md-source="gitlab">
+  
+    <div class="md-source__icon">
+      <svg viewBox="0 0 24 24" width="24" height="24">
+        <use xlink:href="#__gitlab" width="24" height="24"></use>
+      </svg>
+    </div>
+  
+  <div class="md-source__repository">
+    eleme-infra/samaritan
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href=".." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../start/" title="Getting Started" class="md-nav__link">
+      Getting Started
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3" type="checkbox" id="nav-3">
+    
+    <label class="md-nav__link" for="nav-3">
+      Architecture
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-3">
+        Architecture
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arch/overview/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arch/admin-api/" title="Admin API" class="md-nav__link">
+      Admin API
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arch/stats/" title="Stats" class="md-nav__link">
+      Stats
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4" type="checkbox" id="nav-3-4">
+    
+    <label class="md-nav__link" for="nav-3-4">
+      Protocol
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="2">
+      <label class="md-nav__title" for="nav-3-4">
+        Protocol
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arch/protocol/tcp/" title="TCP" class="md-nav__link">
+      TCP
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-3-4-2" type="checkbox" id="nav-3-4-2">
+    
+    <label class="md-nav__link" for="nav-3-4-2">
+      Redis
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="3">
+      <label class="md-nav__title" for="nav-3-4-2">
+        Redis
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arch/protocol/redis/redis/" title="Overview" class="md-nav__link">
+      Overview
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../changelog/" title="Changelog" class="md-nav__link">
+      Changelog
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Proto Reference
+      </label>
+    
+    <a href="./" title="Proto Reference" class="md-nav__link md-nav__link--active">
+      Proto Reference
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discoveryproto" class="md-nav__link">
+    discovery.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
+    SvcConfigDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcconfigdiscoveryresponse" class="md-nav__link">
+    SvcConfigDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
+    SvcConfigDiscoveryResponse.UpdatedEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcdiscoveryrequest" class="md-nav__link">
+    SvcDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcdiscoveryresponse" class="md-nav__link">
+    SvcDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryrequest" class="md-nav__link">
+    SvcEndpointDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryresponse" class="md-nav__link">
+    SvcEndpointDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discoveryservice" class="md-nav__link">
+    DiscoveryService
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstrapbootstrapproto" class="md-nav__link">
+    bootstrap/bootstrap.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap" class="md-nav__link">
+    Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configsource" class="md-nav__link">
+    ConfigSource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    Log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logoutput" class="md-nav__link">
+    Log.Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sink" class="md-nav__link">
+    Sink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staticservice" class="md-nav__link">
+    StaticService
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stats" class="md-nav__link">
+    Stats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loglevel" class="md-nav__link">
+    Log.Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logoutputtype" class="md-nav__link">
+    Log.Output.Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinktype" class="md-nav__link">
+    Sink.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hchcproto" class="md-nav__link">
+    hc/hc.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atcpchecker" class="md-nav__link">
+    ATCPChecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atcpcheckeraction" class="md-nav__link">
+    ATCPChecker.Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healthcheck" class="md-nav__link">
+    HealthCheck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysqlchecker" class="md-nav__link">
+    MySQLChecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redischecker" class="md-nav__link">
+    RedisChecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpchecker" class="md-nav__link">
+    TCPChecker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocolprotocolproto" class="md-nav__link">
+    protocol/protocol.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysqloption" class="md-nav__link">
+    MySQLOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redisoption" class="md-nav__link">
+    RedisOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpoption" class="md-nav__link">
+    TCPOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redisoptionreadstrategy" class="md-nav__link">
+    RedisOption.ReadStrategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commoninstanceproto" class="md-nav__link">
+    common/instance.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance" class="md-nav__link">
+    Instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commonaddressproto" class="md-nav__link">
+    common/address.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address" class="md-nav__link">
+    Address
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceendpointproto" class="md-nav__link">
+    service/endpoint.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstate" class="md-nav__link">
+    Endpoint.State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointtype" class="md-nav__link">
+    Endpoint.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceserviceproto" class="md-nav__link">
+    service/service.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceconfigproto" class="md-nav__link">
+    service/config.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener" class="md-nav__link">
+    Listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancepolicy" class="md-nav__link">
+    LoadBalancePolicy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalar-value-types" class="md-nav__link">
+    Scalar Value Types
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../faq/" title="FAQ" class="md-nav__link">
+      FAQ
+    </a>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#discoveryproto" class="md-nav__link">
+    discovery.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
+    SvcConfigDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcconfigdiscoveryresponse" class="md-nav__link">
+    SvcConfigDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
+    SvcConfigDiscoveryResponse.UpdatedEntry
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcdiscoveryrequest" class="md-nav__link">
+    SvcDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcdiscoveryresponse" class="md-nav__link">
+    SvcDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryrequest" class="md-nav__link">
+    SvcEndpointDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryresponse" class="md-nav__link">
+    SvcEndpointDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discoveryservice" class="md-nav__link">
+    DiscoveryService
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#bootstrapbootstrapproto" class="md-nav__link">
+    bootstrap/bootstrap.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#admin" class="md-nav__link">
+    Admin
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#bootstrap" class="md-nav__link">
+    Bootstrap
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#configsource" class="md-nav__link">
+    ConfigSource
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#log" class="md-nav__link">
+    Log
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logoutput" class="md-nav__link">
+    Log.Output
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sink" class="md-nav__link">
+    Sink
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#staticservice" class="md-nav__link">
+    StaticService
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stats" class="md-nav__link">
+    Stats
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loglevel" class="md-nav__link">
+    Log.Level
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logoutputtype" class="md-nav__link">
+    Log.Output.Type
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#sinktype" class="md-nav__link">
+    Sink.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#hchcproto" class="md-nav__link">
+    hc/hc.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#atcpchecker" class="md-nav__link">
+    ATCPChecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#atcpcheckeraction" class="md-nav__link">
+    ATCPChecker.Action
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#healthcheck" class="md-nav__link">
+    HealthCheck
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#mysqlchecker" class="md-nav__link">
+    MySQLChecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redischecker" class="md-nav__link">
+    RedisChecker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpchecker" class="md-nav__link">
+    TCPChecker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#protocolprotocolproto" class="md-nav__link">
+    protocol/protocol.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#mysqloption" class="md-nav__link">
+    MySQLOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redisoption" class="md-nav__link">
+    RedisOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#tcpoption" class="md-nav__link">
+    TCPOption
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#protocol" class="md-nav__link">
+    Protocol
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redisoptionreadstrategy" class="md-nav__link">
+    RedisOption.ReadStrategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commoninstanceproto" class="md-nav__link">
+    common/instance.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#instance" class="md-nav__link">
+    Instance
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commonaddressproto" class="md-nav__link">
+    common/address.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#address" class="md-nav__link">
+    Address
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceendpointproto" class="md-nav__link">
+    service/endpoint.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstate" class="md-nav__link">
+    Endpoint.State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointtype" class="md-nav__link">
+    Endpoint.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceserviceproto" class="md-nav__link">
+    service/service.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#serviceconfigproto" class="md-nav__link">
+    service/config.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener" class="md-nav__link">
+    Listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancepolicy" class="md-nav__link">
+    LoadBalancePolicy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#scalar-value-types" class="md-nav__link">
+    Scalar Value Types
+  </a>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="protocol-documentation">Protocol Documentation<a class="headerlink" href="#protocol-documentation" title="Permanent link">&para;</a></h1>
+<p><a name="top"></a></p>
+<h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p><a href="#discovery.proto">discovery.proto</a></p>
+<ul>
+<li><a href="#discovery.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a></li>
+<li><a href="#discovery.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a></li>
+<li><a href="#discovery.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></li>
+<li><a href="#discovery.SvcDiscoveryRequest">SvcDiscoveryRequest</a></li>
+<li><a href="#discovery.SvcDiscoveryResponse">SvcDiscoveryResponse</a></li>
+<li><a href="#discovery.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a></li>
+<li>
+<p><a href="#discovery.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a></p>
+</li>
+<li>
+<p><a href="#discovery.DiscoveryService">DiscoveryService</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#bootstrap/bootstrap.proto">bootstrap/bootstrap.proto</a></p>
+<ul>
+<li><a href="#bootstrap.Admin">Admin</a></li>
+<li><a href="#bootstrap.Bootstrap">Bootstrap</a></li>
+<li><a href="#bootstrap.ConfigSource">ConfigSource</a></li>
+<li><a href="#bootstrap.Log">Log</a></li>
+<li><a href="#bootstrap.Log.Output">Log.Output</a></li>
+<li><a href="#bootstrap.Sink">Sink</a></li>
+<li><a href="#bootstrap.StaticService">StaticService</a></li>
+<li>
+<p><a href="#bootstrap.Stats">Stats</a></p>
+</li>
+<li>
+<p><a href="#bootstrap.Log.Level">Log.Level</a></p>
+</li>
+<li><a href="#bootstrap.Log.Output.Type">Log.Output.Type</a></li>
+<li><a href="#bootstrap.Sink.Type">Sink.Type</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#hc/hc.proto">hc/hc.proto</a></p>
+<ul>
+<li><a href="#hc.ATCPChecker">ATCPChecker</a></li>
+<li><a href="#hc.ATCPChecker.Action">ATCPChecker.Action</a></li>
+<li><a href="#hc.HealthCheck">HealthCheck</a></li>
+<li><a href="#hc.MySQLChecker">MySQLChecker</a></li>
+<li><a href="#hc.RedisChecker">RedisChecker</a></li>
+<li><a href="#hc.TCPChecker">TCPChecker</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#protocol/protocol.proto">protocol/protocol.proto</a></p>
+<ul>
+<li><a href="#protocol.MySQLOption">MySQLOption</a></li>
+<li><a href="#protocol.RedisOption">RedisOption</a></li>
+<li>
+<p><a href="#protocol.TCPOption">TCPOption</a></p>
+</li>
+<li>
+<p><a href="#protocol.Protocol">Protocol</a></p>
+</li>
+<li><a href="#protocol.RedisOption.ReadStrategy">RedisOption.ReadStrategy</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#common/instance.proto">common/instance.proto</a></p>
+<ul>
+<li><a href="#common.Instance">Instance</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#common/address.proto">common/address.proto</a></p>
+<ul>
+<li><a href="#common.Address">Address</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#service/endpoint.proto">service/endpoint.proto</a></p>
+<ul>
+<li>
+<p><a href="#service.Endpoint">Endpoint</a></p>
+</li>
+<li>
+<p><a href="#service.Endpoint.State">Endpoint.State</a></p>
+</li>
+<li><a href="#service.Endpoint.Type">Endpoint.Type</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#service/service.proto">service/service.proto</a></p>
+<ul>
+<li><a href="#service.Service">Service</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#service/config.proto">service/config.proto</a></p>
+<ul>
+<li><a href="#service.Config">Config</a></li>
+<li>
+<p><a href="#service.Listener">Listener</a></p>
+</li>
+<li>
+<p><a href="#service.LoadBalancePolicy">LoadBalancePolicy</a></p>
+</li>
+</ul>
+</li>
+<li>
+<p><a href="#scalar-value-types">Scalar Value Types</a></p>
+</li>
+</ul>
+<p><a name="discovery.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="discoveryproto">discovery.proto<a class="headerlink" href="#discoveryproto" title="Permanent link">&para;</a></h2>
+<p><a name="discovery.SvcConfigDiscoveryRequest"></a></p>
+<h3 id="svcconfigdiscoveryrequest">SvcConfigDiscoveryRequest<a class="headerlink" href="#svcconfigdiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svc_names_subscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to subscribe.</td>
+</tr>
+<tr>
+<td>svc_names_unsubscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to unsubscribe.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcConfigDiscoveryResponse"></a></p>
+<h3 id="svcconfigdiscoveryresponse">SvcConfigDiscoveryResponse<a class="headerlink" href="#svcconfigdiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>updated</td>
+<td><a href="#discovery.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></td>
+<td>repeated</td>
+<td>Update of configuration.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcConfigDiscoveryResponse.UpdatedEntry"></a></p>
+<h3 id="svcconfigdiscoveryresponseupdatedentry">SvcConfigDiscoveryResponse.UpdatedEntry<a class="headerlink" href="#svcconfigdiscoveryresponseupdatedentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#service.Config">service.Config</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcDiscoveryRequest"></a></p>
+<h3 id="svcdiscoveryrequest">SvcDiscoveryRequest<a class="headerlink" href="#svcdiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#common.Instance">common.Instance</a></td>
+<td></td>
+<td>Meta information of the current instance.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcDiscoveryResponse"></a></p>
+<h3 id="svcdiscoveryresponse">SvcDiscoveryResponse<a class="headerlink" href="#svcdiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>added</td>
+<td><a href="#service.Service">service.Service</a></td>
+<td>repeated</td>
+<td>Added service.</td>
+</tr>
+<tr>
+<td>removed</td>
+<td><a href="#service.Service">service.Service</a></td>
+<td>repeated</td>
+<td>Removed service.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcEndpointDiscoveryRequest"></a></p>
+<h3 id="svcendpointdiscoveryrequest">SvcEndpointDiscoveryRequest<a class="headerlink" href="#svcendpointdiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svc_names_subscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to subscribe.</td>
+</tr>
+<tr>
+<td>svc_names_unsubscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to unsubscribe.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcEndpointDiscoveryResponse"></a></p>
+<h3 id="svcendpointdiscoveryresponse">SvcEndpointDiscoveryResponse<a class="headerlink" href="#svcendpointdiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svc_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name of service which endpoints had updated.</td>
+</tr>
+<tr>
+<td>added</td>
+<td><a href="#service.Endpoint">service.Endpoint</a></td>
+<td>repeated</td>
+<td>Added endpoints.</td>
+</tr>
+<tr>
+<td>removed</td>
+<td><a href="#service.Endpoint">service.Endpoint</a></td>
+<td>repeated</td>
+<td>Removed endpoints.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.DiscoveryService"></a></p>
+<h3 id="discoveryservice">DiscoveryService<a class="headerlink" href="#discoveryservice" title="Permanent link">&para;</a></h3>
+<p>DiscoveryService is a service which is used to discover service, service config
+and service endpoints.</p>
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th>Request Type</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StreamSvcs</td>
+<td><a href="#discovery.SvcDiscoveryRequest">SvcDiscoveryRequest</a></td>
+<td><a href="#discovery.SvcDiscoveryResponse">SvcDiscoveryResponse</a> stream</td>
+<td></td>
+</tr>
+<tr>
+<td>StreamSvcConfigs</td>
+<td><a href="#discovery.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a> stream</td>
+<td><a href="#discovery.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a> stream</td>
+<td></td>
+</tr>
+<tr>
+<td>StreamSvcEndpoints</td>
+<td><a href="#discovery.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a> stream</td>
+<td><a href="#discovery.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a> stream</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap/bootstrap.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="bootstrapbootstrapproto">bootstrap/bootstrap.proto<a class="headerlink" href="#bootstrapbootstrapproto" title="Permanent link">&para;</a></h2>
+<p><a name="bootstrap.Admin"></a></p>
+<h3 id="admin">Admin<a class="headerlink" href="#admin" title="Permanent link">&para;</a></h3>
+<p>The admin message is required to configure the administration server.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>bind</td>
+<td><a href="#common.Address">common.Address</a></td>
+<td></td>
+<td>The TCP address that the administration server will listen on, not null.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Bootstrap"></a></p>
+<h3 id="bootstrap">Bootstrap<a class="headerlink" href="#bootstrap" title="Permanent link">&para;</a></h3>
+<p>This message is supplied via &#39;-config&#39; cli flag and act as the
+root of configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#common.Instance">common.Instance</a></td>
+<td></td>
+<td>The instance contains the meta information of the current instance.</td>
+</tr>
+<tr>
+<td>log</td>
+<td><a href="#bootstrap.Log">Log</a></td>
+<td></td>
+<td>Configuration for log.</td>
+</tr>
+<tr>
+<td>stats</td>
+<td><a href="#bootstrap.Stats">Stats</a></td>
+<td></td>
+<td>Configuration for stats.</td>
+</tr>
+<tr>
+<td>admin</td>
+<td><a href="#bootstrap.Admin">Admin</a></td>
+<td></td>
+<td>Configuration for the local administration HTTP server.</td>
+</tr>
+<tr>
+<td>static_services</td>
+<td><a href="#bootstrap.StaticService">StaticService</a></td>
+<td>repeated</td>
+<td>Statically specified services.</td>
+</tr>
+<tr>
+<td>dynamic_source_config</td>
+<td><a href="#bootstrap.ConfigSource">ConfigSource</a></td>
+<td></td>
+<td>Configuration for dynamic source config.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.ConfigSource"></a></p>
+<h3 id="configsource">ConfigSource<a class="headerlink" href="#configsource" title="Permanent link">&para;</a></h3>
+<p>Configuration for dynamic source config.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>endpoint</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The gRPC endpoint of dynamic source config service, not null.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Log"></a></p>
+<h3 id="log">Log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
+<p>Log config.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>level</td>
+<td><a href="#bootstrap.Log.Level">Log.Level</a></td>
+<td></td>
+<td>Logging level</td>
+</tr>
+<tr>
+<td>output</td>
+<td><a href="#bootstrap.Log.Output">Log.Output</a></td>
+<td></td>
+<td>Output target configuration, support send log to stdout or syslog, use stdout as default.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Log.Output"></a></p>
+<h3 id="logoutput">Log.Output<a class="headerlink" href="#logoutput" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="#bootstrap.Log.Output.Type">Log.Output.Type</a></td>
+<td></td>
+<td>Type of output target.</td>
+</tr>
+<tr>
+<td>target</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Address of server which is required when <code>SYSLOG</code> is selected.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Sink"></a></p>
+<h3 id="sink">Sink<a class="headerlink" href="#sink" title="Permanent link">&para;</a></h3>
+<p>Sink is a sink for stats. Each Sink is responsible for writing stats
+to a backing store.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>type</td>
+<td><a href="#bootstrap.Sink.Type">Sink.Type</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>endpoint</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Sink endpoint, not empty.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.StaticService"></a></p>
+<h3 id="staticservice">StaticService<a class="headerlink" href="#staticservice" title="Permanent link">&para;</a></h3>
+<p>The wrapper of service config and endpoints.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The name of service.</td>
+</tr>
+<tr>
+<td>config</td>
+<td><a href="#service.Config">service.Config</a></td>
+<td></td>
+<td>The proxy strategy of service.</td>
+</tr>
+<tr>
+<td>endpoints</td>
+<td><a href="#service.Endpoint">service.Endpoint</a></td>
+<td>repeated</td>
+<td>The endpoints of service. Need at least one endpoint.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Stats"></a></p>
+<h3 id="stats">Stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h3>
+<p>Stats config.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>sinks</td>
+<td><a href="#bootstrap.Sink">Sink</a></td>
+<td>repeated</td>
+<td>Optional set of stats sinks.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Log.Level"></a></p>
+<h3 id="loglevel">Log.Level<a class="headerlink" href="#loglevel" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>INFO</td>
+<td>0</td>
+<td>Print base messages during running. This is in addition to warnings and errors.</td>
+</tr>
+<tr>
+<td>DEBUG</td>
+<td>-1</td>
+<td>Print everything, including debugging information.</td>
+</tr>
+<tr>
+<td>WARING</td>
+<td>1</td>
+<td>Print all warnings and errors.</td>
+</tr>
+<tr>
+<td>ERROR</td>
+<td>2</td>
+<td>Print all errors.</td>
+</tr>
+<tr>
+<td>QUIET</td>
+<td>3</td>
+<td>Print nothing.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Log.Output.Type"></a></p>
+<h3 id="logoutputtype">Log.Output.Type<a class="headerlink" href="#logoutputtype" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>STDOUT</td>
+<td>0</td>
+<td>stdout</td>
+</tr>
+<tr>
+<td>SYSLOG</td>
+<td>1</td>
+<td>syslog</td>
+</tr>
+</tbody>
+</table>
+<p><a name="bootstrap.Sink.Type"></a></p>
+<h3 id="sinktype">Sink.Type<a class="headerlink" href="#sinktype" title="Permanent link">&para;</a></h3>
+<p>Sink type</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNKNOWN</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>STATSD</td>
+<td>1</td>
+<td>statsd</td>
+</tr>
+</tbody>
+</table>
+<p><a name="hc/hc.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="hchcproto">hc/hc.proto<a class="headerlink" href="#hchcproto" title="Permanent link">&para;</a></h2>
+<p><a name="hc.ATCPChecker"></a></p>
+<h3 id="atcpchecker">ATCPChecker<a class="headerlink" href="#atcpchecker" title="Permanent link">&para;</a></h3>
+<p>ATCP checker config.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>action</td>
+<td><a href="#hc.ATCPChecker.Action">ATCPChecker.Action</a></td>
+<td>repeated</td>
+<td>List of actions. All actions will execute during the health check, if one of the actions fails, this health check will be considered as failed. Need at least one action.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="hc.ATCPChecker.Action"></a></p>
+<h3 id="atcpcheckeraction">ATCPChecker.Action<a class="headerlink" href="#atcpcheckeraction" title="Permanent link">&para;</a></h3>
+<p>Action represents a set of requests from Samaritan to the server
+and what the expected server returns.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>send</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>This is used to send a data along with a connection opening.</td>
+</tr>
+<tr>
+<td>expect</td>
+<td><a href="#bytes">bytes</a></td>
+<td></td>
+<td>Expecting content returned from the server.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="hc.HealthCheck"></a></p>
+<h3 id="healthcheck">HealthCheck<a class="headerlink" href="#healthcheck" title="Permanent link">&para;</a></h3>
+<p>Configuration of health check.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>interval</td>
+<td><a href="#google.protobuf.Duration">google.protobuf.Duration</a></td>
+<td></td>
+<td>The interval between two consecutive health checks. Must be greater than 0s.</td>
+</tr>
+<tr>
+<td>timeout</td>
+<td><a href="#google.protobuf.Duration">google.protobuf.Duration</a></td>
+<td></td>
+<td>The timeout when doing a health check. Must be greater than 0s.</td>
+</tr>
+<tr>
+<td>fall_threshold</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>A server will be considered as dead after # consecutive unsuccessful health checks. Must be greater than 0.</td>
+</tr>
+<tr>
+<td>rise_threshold</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>A server will be considered as operational after # consecutive successful health checks. Must be greater than 0.</td>
+</tr>
+<tr>
+<td>tcp_checker</td>
+<td><a href="#hc.TCPChecker">TCPChecker</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>atcp_checker</td>
+<td><a href="#hc.ATCPChecker">ATCPChecker</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mysql_checker</td>
+<td><a href="#hc.MySQLChecker">MySQLChecker</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>redis_checker</td>
+<td><a href="#hc.RedisChecker">RedisChecker</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="hc.MySQLChecker"></a></p>
+<h3 id="mysqlchecker">MySQLChecker<a class="headerlink" href="#mysqlchecker" title="Permanent link">&para;</a></h3>
+<p>MySQL checker config.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>MySQL server username, not null.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="hc.RedisChecker"></a></p>
+<h3 id="redischecker">RedisChecker<a class="headerlink" href="#redischecker" title="Permanent link">&para;</a></h3>
+<p>Redis checker config.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>password</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Redis server password, if the password is not empty, the AUTH command will be sent before the PING command.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="hc.TCPChecker"></a></p>
+<h3 id="tcpchecker">TCPChecker<a class="headerlink" href="#tcpchecker" title="Permanent link">&para;</a></h3>
+<p>TCP checker config.</p>
+<p><a name="protocol/protocol.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="protocolprotocolproto">protocol/protocol.proto<a class="headerlink" href="#protocolprotocolproto" title="Permanent link">&para;</a></h2>
+<p><a name="protocol.MySQLOption"></a></p>
+<h3 id="mysqloption">MySQLOption<a class="headerlink" href="#mysqloption" title="Permanent link">&para;</a></h3>
+<p>MySQL protocol option.</p>
+<p><a name="protocol.RedisOption"></a></p>
+<h3 id="redisoption">RedisOption<a class="headerlink" href="#redisoption" title="Permanent link">&para;</a></h3>
+<p>Redis protocol option.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>read_strategy</td>
+<td><a href="#protocol.RedisOption.ReadStrategy">RedisOption.ReadStrategy</a></td>
+<td></td>
+<td>Strategy of a read only command.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="protocol.TCPOption"></a></p>
+<h3 id="tcpoption">TCPOption<a class="headerlink" href="#tcpoption" title="Permanent link">&para;</a></h3>
+<p>TCP protocol option.</p>
+<p><a name="protocol.Protocol"></a></p>
+<h3 id="protocol">Protocol<a class="headerlink" href="#protocol" title="Permanent link">&para;</a></h3>
+<p>Protocol enum.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UNKNOWN</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>TCP</td>
+<td>1</td>
+<td>TCP</td>
+</tr>
+<tr>
+<td>MySQL</td>
+<td>2</td>
+<td>MySQL</td>
+</tr>
+<tr>
+<td>Redis</td>
+<td>3</td>
+<td>Redis</td>
+</tr>
+</tbody>
+</table>
+<p><a name="protocol.RedisOption.ReadStrategy"></a></p>
+<h3 id="redisoptionreadstrategy">RedisOption.ReadStrategy<a class="headerlink" href="#redisoptionreadstrategy" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MASTER</td>
+<td>0</td>
+<td>Read from master nodes.</td>
+</tr>
+<tr>
+<td>SLAVE</td>
+<td>1</td>
+<td>Read from slave nodes.</td>
+</tr>
+<tr>
+<td>BOTH</td>
+<td>2</td>
+<td>Read from all nodes.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="common/instance.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="commoninstanceproto">common/instance.proto<a class="headerlink" href="#commoninstanceproto" title="Permanent link">&para;</a></h2>
+<p><a name="common.Instance"></a></p>
+<h3 id="instance">Instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The id of this instance, if id is not define, it will generate by ip and admin port.</td>
+</tr>
+<tr>
+<td>version</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Version of this instance running now. This field is automatically populated by Samaritan does not require to specify by user.</td>
+</tr>
+<tr>
+<td>belong</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The service name which this instance belongs to. It&#39;s required when you want to change the behavior of Sam at runtime, such as update proxy policy, update service endpoints, etc. If two instances belong to the same service, it will be treated in one group.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="common/address.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="commonaddressproto">common/address.proto<a class="headerlink" href="#commonaddressproto" title="Permanent link">&para;</a></h2>
+<p><a name="common.Address"></a></p>
+<h3 id="address">Address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ip</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>IP address, IPv4 or IPv6.</td>
+</tr>
+<tr>
+<td>port</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>Port, [0, 65535].</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service/endpoint.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="serviceendpointproto">service/endpoint.proto<a class="headerlink" href="#serviceendpointproto" title="Permanent link">&para;</a></h2>
+<p><a name="service.Endpoint"></a></p>
+<h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td><a href="#common.Address">common.Address</a></td>
+<td></td>
+<td>Address of endpoint, must be set.</td>
+</tr>
+<tr>
+<td>state</td>
+<td><a href="#service.Endpoint.State">Endpoint.State</a></td>
+<td></td>
+<td>Healthy state of endpoint. When state is DOWN, this host will not be selected for load balancing.</td>
+</tr>
+<tr>
+<td>type</td>
+<td><a href="#service.Endpoint.Type">Endpoint.Type</a></td>
+<td></td>
+<td>Type of endpoints. When all hosts whose type is main are in the DOWN state, the host whose type is backup will be selected.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service.Endpoint.State"></a></p>
+<h3 id="endpointstate">Endpoint.State<a class="headerlink" href="#endpointstate" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>UP</td>
+<td>0</td>
+<td>healthy</td>
+</tr>
+<tr>
+<td>DOWN</td>
+<td>1</td>
+<td>unhealthy</td>
+</tr>
+<tr>
+<td>UNKNOWN</td>
+<td>2</td>
+<td>unknown</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service.Endpoint.Type"></a></p>
+<h3 id="endpointtype">Endpoint.Type<a class="headerlink" href="#endpointtype" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MAIN</td>
+<td>0</td>
+<td>main</td>
+</tr>
+<tr>
+<td>BACKUP</td>
+<td>1</td>
+<td>backup</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service/service.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="serviceserviceproto">service/service.proto<a class="headerlink" href="#serviceserviceproto" title="Permanent link">&para;</a></h2>
+<p><a name="service.Service"></a></p>
+<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<p>Service represents a service.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name of service.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service/config.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="serviceconfigproto">service/config.proto<a class="headerlink" href="#serviceconfigproto" title="Permanent link">&para;</a></h2>
+<p><a name="service.Config"></a></p>
+<h3 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
+<p>Configuration of service,
+contains configuration information required for the processor to run.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>listener</td>
+<td><a href="#service.Listener">Listener</a></td>
+<td></td>
+<td>Listener config, must be set.</td>
+</tr>
+<tr>
+<td>health_check</td>
+<td><a href="#hc.HealthCheck">hc.HealthCheck</a></td>
+<td></td>
+<td>Health check will be disabled when not defined.</td>
+</tr>
+<tr>
+<td>connect_timeout</td>
+<td><a href="#google.protobuf.Duration">google.protobuf.Duration</a></td>
+<td></td>
+<td>The maximum time to wait for a connection attempt to a server to succeed, default is 3s.</td>
+</tr>
+<tr>
+<td>idle_timeout</td>
+<td><a href="#google.protobuf.Duration">google.protobuf.Duration</a></td>
+<td></td>
+<td>The maximum inactivity time on the client side, default is 10min.</td>
+</tr>
+<tr>
+<td>lb_policy</td>
+<td><a href="#service.LoadBalancePolicy">LoadBalancePolicy</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>protocol</td>
+<td><a href="#protocol.Protocol">protocol.Protocol</a></td>
+<td></td>
+<td>Protocol of service, can not be UNKNOWN.</td>
+</tr>
+<tr>
+<td>tcp_option</td>
+<td><a href="#protocol.TCPOption">protocol.TCPOption</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>redis_option</td>
+<td><a href="#protocol.RedisOption">protocol.RedisOption</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>mysql_option</td>
+<td><a href="#protocol.MySQLOption">protocol.MySQLOption</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="service.Listener"></a></p>
+<h3 id="listener">Listener<a class="headerlink" href="#listener" title="Permanent link">&para;</a></h3>
+<p>Listener configuration.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>address</td>
+<td><a href="#common.Address">common.Address</a></td>
+<td></td>
+<td>The address that the listener should listen on, must be set.</td>
+</tr>
+<tr>
+<td>connection_limit</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>The limit of connections, new connections that exceed this value are immediately be closed. Default value is 0 that the limit will be disable.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service.LoadBalancePolicy"></a></p>
+<h3 id="loadbalancepolicy">LoadBalancePolicy<a class="headerlink" href="#loadbalancepolicy" title="Permanent link">&para;</a></h3>
+<p>Load balance policy.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ROUND_ROBIN</td>
+<td>0</td>
+<td>RoundRobin</td>
+</tr>
+<tr>
+<td>LEAST_CONNECTION</td>
+<td>1</td>
+<td>LeastConnection</td>
+</tr>
+<tr>
+<td>RANDOM</td>
+<td>2</td>
+<td>Random</td>
+</tr>
+<tr>
+<td>CLUSTER_PROVIDED</td>
+<td>3</td>
+<td>Provided by redis cluster</td>
+</tr>
+</tbody>
+</table>
+<h2 id="scalar-value-types">Scalar Value Types<a class="headerlink" href="#scalar-value-types" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>.proto Type</th>
+<th>Notes</th>
+<th>C++ Type</th>
+<th>Java Type</th>
+<th>Python Type</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a name="double" /> double</td>
+<td></td>
+<td>double</td>
+<td>double</td>
+<td>float</td>
+</tr>
+<tr>
+<td><a name="float" /> float</td>
+<td></td>
+<td>float</td>
+<td>float</td>
+<td>float</td>
+</tr>
+<tr>
+<td><a name="int32" /> int32</td>
+<td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint32 instead.</td>
+<td>int32</td>
+<td>int</td>
+<td>int</td>
+</tr>
+<tr>
+<td><a name="int64" /> int64</td>
+<td>Uses variable-length encoding. Inefficient for encoding negative numbers – if your field is likely to have negative values, use sint64 instead.</td>
+<td>int64</td>
+<td>long</td>
+<td>int/long</td>
+</tr>
+<tr>
+<td><a name="uint32" /> uint32</td>
+<td>Uses variable-length encoding.</td>
+<td>uint32</td>
+<td>int</td>
+<td>int/long</td>
+</tr>
+<tr>
+<td><a name="uint64" /> uint64</td>
+<td>Uses variable-length encoding.</td>
+<td>uint64</td>
+<td>long</td>
+<td>int/long</td>
+</tr>
+<tr>
+<td><a name="sint32" /> sint32</td>
+<td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int32s.</td>
+<td>int32</td>
+<td>int</td>
+<td>int</td>
+</tr>
+<tr>
+<td><a name="sint64" /> sint64</td>
+<td>Uses variable-length encoding. Signed int value. These more efficiently encode negative numbers than regular int64s.</td>
+<td>int64</td>
+<td>long</td>
+<td>int/long</td>
+</tr>
+<tr>
+<td><a name="fixed32" /> fixed32</td>
+<td>Always four bytes. More efficient than uint32 if values are often greater than 2^28.</td>
+<td>uint32</td>
+<td>int</td>
+<td>int</td>
+</tr>
+<tr>
+<td><a name="fixed64" /> fixed64</td>
+<td>Always eight bytes. More efficient than uint64 if values are often greater than 2^56.</td>
+<td>uint64</td>
+<td>long</td>
+<td>int/long</td>
+</tr>
+<tr>
+<td><a name="sfixed32" /> sfixed32</td>
+<td>Always four bytes.</td>
+<td>int32</td>
+<td>int</td>
+<td>int</td>
+</tr>
+<tr>
+<td><a name="sfixed64" /> sfixed64</td>
+<td>Always eight bytes.</td>
+<td>int64</td>
+<td>long</td>
+<td>int/long</td>
+</tr>
+<tr>
+<td><a name="bool" /> bool</td>
+<td></td>
+<td>bool</td>
+<td>boolean</td>
+<td>boolean</td>
+</tr>
+<tr>
+<td><a name="string" /> string</td>
+<td>A string must always contain UTF-8 encoded or 7-bit ASCII text.</td>
+<td>string</td>
+<td>String</td>
+<td>str/unicode</td>
+</tr>
+<tr>
+<td><a name="bytes" /> bytes</td>
+<td>May contain any arbitrary sequence of bytes.</td>
+<td>string</td>
+<td>ByteString</td>
+<td>str</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../changelog/" title="Changelog" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Changelog
+              </span>
+            </div>
+          </a>
+        
+        
+          <a href="../faq/" title="FAQ" class="md-flex md-footer-nav__link md-footer-nav__link--next" rel="next">
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Next
+                </span>
+                FAQ
+              </span>
+            </div>
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-forward md-footer-nav__button"></i>
+            </div>
+          </a>
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+          <div class="md-footer-copyright__highlight">
+            Copyright &copy; 2019 Samaritan Developers
+          </div>
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:".."}})</script>
+      
+        <script src="https://unpkg.com/mermaid@7.1.0/dist/mermaid.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/raphael/2.2.7/raphael.min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.8.3/underscore-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sequence-diagrams/1.0.6/sequence-diagram-min.js"></script>
+      
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/flowchart/1.6.5/flowchart.min.js"></script>
+      
+        <script src="../js/umlconvert.js"></script>
+      
+    
+  </body>
+</html>
