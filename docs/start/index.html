@@ -791,9 +791,9 @@ it, you may be overwhelmed. For better understanding, we will show you the speci
 <h3 id="instance">instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#instance">instance message</a> is used to specify the environment in which the instance is located, and will be reported to
 the management server.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">instance</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">id</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">ip_port</span>
-  <span class="l l-Scalar l-Scalar-Plain">belong</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sash</span>
+<div class="codehilite"><pre><span></span><span class="nt">instance</span><span class="p">:</span>
+  <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ip_port</span>
+  <span class="nt">belong</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sash</span>
 </pre></div>
 
 
@@ -803,11 +803,11 @@ the management server.</p>
 </div>
 <h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#log">log message</a> is used to specify the log level and output destination.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">log</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">level</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">INFO</span>
-  <span class="l l-Scalar l-Scalar-Plain">output</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">SYSLOG</span>
-    <span class="l l-Scalar l-Scalar-Plain">target</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1:514</span>
+<div class="codehilite"><pre><span></span><span class="nt">log</span><span class="p">:</span>
+  <span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">INFO</span>
+  <span class="nt">output</span><span class="p">:</span>
+    <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SYSLOG</span>
+    <span class="nt">target</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1:514</span>
 </pre></div>
 
 
@@ -822,10 +822,10 @@ the management server.</p>
 </div>
 <h3 id="stats">stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#stats">stats message</a> is used to specify the stats config include internal metrics config and sinks.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">stats</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">sinks</span><span class="p p-Indicator">:</span>
-    <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">type</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">STATSD</span>
-      <span class="l l-Scalar l-Scalar-Plain">endpoint</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">statsd-server.elenet.me:8125</span>
+<div class="codehilite"><pre><span></span><span class="nt">stats</span><span class="p">:</span>
+  <span class="nt">sinks</span><span class="p">:</span>
+    <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">STATSD</span>
+      <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">statsd-server.elenet.me:8125</span>
 </pre></div>
 
 
@@ -833,28 +833,28 @@ the management server.</p>
 <a href="https://prometheus.io">Prometheus</a> is sufficient for most users which means you could omit the stats config directly.</p>
 <h3 id="admin">admin<a class="headerlink" href="#admin" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#admin">admin message</a> is used to specify the configuration for local admin api.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">admin</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">bind</span><span class="p p-Indicator">:</span>
-    <span class="l l-Scalar l-Scalar-Plain">ip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
-    <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span>
+<div class="codehilite"><pre><span></span><span class="nt">admin</span><span class="p">:</span>
+  <span class="nt">bind</span><span class="p">:</span>
+    <span class="nt">ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+    <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span>
 </pre></div>
 
 
 <p>It's required, otherwise the entire process cannot be started. More details about admin api, you can view <a href="">doc</a></p>
 <h3 id="static-services">static services<a class="headerlink" href="#static-services" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#staticservice">static service message</a> is used to specify the static service including name, proxy strategy and endpoints.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">static_services</span><span class="p p-Indicator">:</span>
-  <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">name</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com</span>
-    <span class="l l-Scalar l-Scalar-Plain">config</span><span class="p p-Indicator">:</span>
-      <span class="l l-Scalar l-Scalar-Plain">listener</span><span class="p p-Indicator">:</span>
-        <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span>
-          <span class="l l-Scalar l-Scalar-Plain">ip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
-          <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
-      <span class=" -Error"> </span><span class="l l-Scalar l-Scalar-Plain">protocol</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
-    <span class="l l-Scalar l-Scalar-Plain">endpoints</span><span class="p p-Indicator">:</span>
-      <span class="p p-Indicator">-</span> <span class="l l-Scalar l-Scalar-Plain">address</span><span class="p p-Indicator">:</span>
-          <span class="l l-Scalar l-Scalar-Plain">ip</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">93.184.216.34</span>
-          <span class="l l-Scalar l-Scalar-Plain">port</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
+<div class="codehilite"><pre><span></span><span class="nt">static_services</span><span class="p">:</span>
+  <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com</span>
+    <span class="nt">config</span><span class="p">:</span>
+      <span class="nt">listener</span><span class="p">:</span>
+        <span class="nt">address</span><span class="p">:</span>
+          <span class="nt">ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
+          <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">8080</span>
+      <span class=" -Error"> </span><span class="nt">protocol</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">TCP</span>
+    <span class="nt">endpoints</span><span class="p">:</span>
+      <span class="p p-Indicator">-</span> <span class="nt">address</span><span class="p">:</span>
+          <span class="nt">ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">93.184.216.34</span>
+          <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
 </pre></div>
 
 
@@ -867,8 +867,8 @@ Here are the reasons:</p>
 <p>The correct and recommended way is to use dynamic source, which will be described in detail below.</p>
 <h3 id="dynamic-source">dynamic source<a class="headerlink" href="#dynamic-source" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#bootstrap.ConfigSource">dynamic source message</a> is used to specify the dynamic source configuration.</p>
-<div class="codehilite"><pre><span></span><span class="l l-Scalar l-Scalar-Plain">dynamic_source_config</span><span class="p p-Indicator">:</span>
-  <span class="l l-Scalar l-Scalar-Plain">endpoint</span><span class="p p-Indicator">:</span> <span class="l l-Scalar l-Scalar-Plain">sash.elenet.me:80</span>
+<div class="codehilite"><pre><span></span><span class="nt">dynamic_source_config</span><span class="p">:</span>
+  <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sash.elenet.me:80</span>
 </pre></div>
 
 
@@ -880,6 +880,7 @@ The communication way between them is grpc, and <a href="../proto-ref/#discovery
 It is still private now, but we will open source as soon as possible.</p>
 </div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>TBD</p>
                 
                   
                 
