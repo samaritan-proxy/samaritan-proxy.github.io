@@ -67,31 +67,6 @@
     
     
       
-        
-<script>
-  window.ga = window.ga || function() {
-    (ga.q = ga.q || []).push(arguments)
-  }
-  ga.l = +new Date
-  /* Setup integration and send page view */
-  ga("create", "UA-150917439-1", "auto")
-  ga("set", "anonymizeIp", true)
-  ga("send", "pageview")
-  /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
-    if (document.forms.search) {
-      var query = document.forms.search.query
-      query.addEventListener("blur", function() {
-        if (this.value) {
-          var path = document.location.pathname;
-          ga("send", "pageview", path + "?q=" + this.value)
-        }
-      })
-    }
-  })
-</script>
-<script async src="https://www.google-analytics.com/analytics.js"></script>
-      
     
     
   </head>
@@ -696,13 +671,12 @@
                 
                 
                 <h1 id="getting-started">Getting Started<a class="headerlink" href="#getting-started" title="Permanent link">&para;</a></h1>
-<p>This section describes how to get started quickly and provides some sample configurations.</p>
 <h2 id="installation">Installation<a class="headerlink" href="#installation" title="Permanent link">&para;</a></h2>
 <h3 id="pre-built-binaries">Pre-built binaries<a class="headerlink" href="#pre-built-binaries" title="Permanent link">&para;</a></h3>
 <p>It's the fastest way, you can choose the appropriate binaries from <a href="https://github.com/samaritan-proxy/samaritan/releases">release page</a>.</p>
 <p>Assuming your os system is darwin and platform is amd64, you can use the following command to download and install.</p>
 <div class="codehilite"><pre><span></span>$ <span class="nv">VERSION</span><span class="o">=</span><span class="m">1</span>.0.0 <span class="nv">OS</span><span class="o">=</span>darwin <span class="nv">ARCH</span><span class="o">=</span>amd64 curl -fsSL <span class="se">\</span>
-    https://github.com/samaritan-proxy/samaritan/releases/download/v<span class="nv">$VERSION</span>/samaritan<span class="nv">$VERSION</span>.<span class="nv">$OS</span>-<span class="nv">$ARCH</span>.tar.gz <span class="se">\</span>
+    https://github.com/samaritan-proxy/samaritan/releases/download/v<span class="nv">$VERSION</span>/samaritan-<span class="nv">$OS</span>-<span class="nv">$ARCH</span>.tar.gz <span class="se">\</span>
     -o /tmp/samaritan-<span class="nv">$VERSION</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
     tar -zxvf /tmp/samaritan-<span class="nv">$VERSION</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
     install /tmp/samaritan-<span class="nv">$VERSION</span>/samaritan /usr/local/bin
@@ -851,7 +825,7 @@ the management server.</p>
 <div class="codehilite"><pre><span></span><span class="nt">stats</span><span class="p">:</span>
   <span class="nt">sinks</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">STATSD</span>
-      <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com:8125</span>
+      <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">statsd-server.elenet.me:8125</span>
 </pre></div>
 
 
@@ -894,7 +868,7 @@ Here are the reasons:</p>
 <h3 id="dynamic-source">dynamic source<a class="headerlink" href="#dynamic-source" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#bootstrap.ConfigSource">dynamic source message</a> is used to specify the dynamic source configuration.</p>
 <div class="codehilite"><pre><span></span><span class="nt">dynamic_source_config</span><span class="p">:</span>
-  <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com:80</span>
+  <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sash.elenet.me:80</span>
 </pre></div>
 
 
