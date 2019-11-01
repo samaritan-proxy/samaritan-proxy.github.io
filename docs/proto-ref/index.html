@@ -67,6 +67,31 @@
     
     
       
+        
+<script>
+  window.ga = window.ga || function() {
+    (ga.q = ga.q || []).push(arguments)
+  }
+  ga.l = +new Date
+  /* Setup integration and send page view */
+  ga("create", "UA-150917439-1", "auto")
+  ga("set", "anonymizeIp", true)
+  ga("send", "pageview")
+  /* Register handler to log search on blur */
+  document.addEventListener("DOMContentLoaded", () => {
+    if (document.forms.search) {
+      var query = document.forms.search.query
+      query.addEventListener("blur", function() {
+        if (this.value) {
+          var path = document.location.pathname;
+          ga("send", "pageview", path + "?q=" + this.value)
+        }
+      })
+    }
+  })
+</script>
+<script async src="https://www.google-analytics.com/analytics.js"></script>
+      
     
     
   </head>
@@ -79,7 +104,7 @@
       <defs>
         
         
-          <svg xmlns="http://www.w3.org/2000/svg" width="500" height="500" viewBox="0 0 500 500" id="__gitlab"><path fill="currentColor" d="M93.667 473.347l90.684-279.097H2.983l90.684 279.097z" transform="translate(156.198 1.16)"/><path fill="currentColor" d="M221.333 473.345L130.649 194.25H3.557l217.776 279.095z" transform="translate(28.531 1.16)" opacity=".7"/><path fill="currentColor" d="M32 195.155L4.441 279.97a18.773 18.773 0 0 0 6.821 20.99l238.514 173.29L32 195.155z" transform="translate(.089 .256)" opacity=".5"/><path fill="currentColor" d="M2.667-84.844h127.092L75.14-252.942c-2.811-8.649-15.047-8.649-17.856 0L2.667-84.844z" transform="translate(29.422 280.256)"/><path fill="currentColor" d="M2.667 473.345L93.351 194.25h127.092L2.667 473.345z" transform="translate(247.198 1.16)" opacity=".7"/><path fill="currentColor" d="M221.334 195.155l27.559 84.815a18.772 18.772 0 0 1-6.821 20.99L3.557 474.25l217.777-279.095z" transform="translate(246.307 .256)" opacity=".5"/><path fill="currentColor" d="M130.667-84.844H3.575l54.618-168.098c2.811-8.649 15.047-8.649 17.856 0l54.618 168.098z" transform="translate(336.974 280.256)"/></svg>
+          <svg xmlns="http://www.w3.org/2000/svg" width="416" height="448" viewBox="0 0 416 448" id="__github"><path fill="currentColor" d="M160 304q0 10-3.125 20.5t-10.75 19T128 352t-18.125-8.5-10.75-19T96 304t3.125-20.5 10.75-19T128 256t18.125 8.5 10.75 19T160 304zm160 0q0 10-3.125 20.5t-10.75 19T288 352t-18.125-8.5-10.75-19T256 304t3.125-20.5 10.75-19T288 256t18.125 8.5 10.75 19T320 304zm40 0q0-30-17.25-51T296 232q-10.25 0-48.75 5.25Q229.5 240 208 240t-39.25-2.75Q130.75 232 120 232q-29.5 0-46.75 21T56 304q0 22 8 38.375t20.25 25.75 30.5 15 35 7.375 37.25 1.75h42q20.5 0 37.25-1.75t35-7.375 30.5-15 20.25-25.75T360 304zm56-44q0 51.75-15.25 82.75-9.5 19.25-26.375 33.25t-35.25 21.5-42.5 11.875-42.875 5.5T212 416q-19.5 0-35.5-.75t-36.875-3.125-38.125-7.5-34.25-12.875T37 371.5t-21.5-28.75Q0 312 0 260q0-59.25 34-99-6.75-20.5-6.75-42.5 0-29 12.75-54.5 27 0 47.5 9.875t47.25 30.875Q171.5 96 212 96q37 0 70 8 26.25-20.5 46.75-30.25T376 64q12.75 25.5 12.75 54.5 0 21.75-6.75 42 34 40 34 99.5z"/></svg>
         
       </defs>
     </svg>
@@ -155,16 +180,16 @@
 
   
 
-<a href="http://gitlab.alibaba-inc.com/eleme-infra/samaritan" title="Go to repository" class="md-source" data-md-source="gitlab">
+<a href="http://github.com/samaritan-proxy/samaritan/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__gitlab" width="24" height="24"></use>
+        <use xlink:href="#__github" width="24" height="24"></use>
       </svg>
     </div>
   
   <div class="md-source__repository">
-    eleme-infra/samaritan
+    samaritan-proxy/samaritan
   </div>
 </a>
           </div>
@@ -202,16 +227,16 @@
 
   
 
-<a href="http://gitlab.alibaba-inc.com/eleme-infra/samaritan" title="Go to repository" class="md-source" data-md-source="gitlab">
+<a href="http://github.com/samaritan-proxy/samaritan/" title="Go to repository" class="md-source" data-md-source="github">
   
     <div class="md-source__icon">
       <svg viewBox="0 0 24 24" width="24" height="24">
-        <use xlink:href="#__gitlab" width="24" height="24"></use>
+        <use xlink:href="#__github" width="24" height="24"></use>
       </svg>
     </div>
   
   <div class="md-source__repository">
-    eleme-infra/samaritan
+    samaritan-proxy/samaritan
   </div>
 </a>
     </div>
@@ -426,77 +451,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discoveryproto" class="md-nav__link">
-    discovery.proto
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
-    SvcConfigDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcconfigdiscoveryresponse" class="md-nav__link">
-    SvcConfigDiscoveryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
-    SvcConfigDiscoveryResponse.UpdatedEntry
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryrequest" class="md-nav__link">
-    SvcDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryresponse" class="md-nav__link">
-    SvcDiscoveryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcendpointdiscoveryrequest" class="md-nav__link">
-    SvcEndpointDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcendpointdiscoveryresponse" class="md-nav__link">
-    SvcEndpointDiscoveryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discoveryservice" class="md-nav__link">
-    DiscoveryService
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bootstrapbootstrapproto" class="md-nav__link">
-    bootstrap/bootstrap.proto
+  <a href="#configbootstrapbootstrapproto" class="md-nav__link">
+    config/bootstrap/bootstrap.proto
   </a>
   
     <nav class="md-nav">
@@ -585,8 +541,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hchcproto" class="md-nav__link">
-    hc/hc.proto
+  <a href="#confighchcproto" class="md-nav__link">
+    config/hc/hc.proto
   </a>
   
     <nav class="md-nav">
@@ -640,8 +596,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#protocolprotocolproto" class="md-nav__link">
-    protocol/protocol.proto
+  <a href="#configprotocolprotocolproto" class="md-nav__link">
+    config/protocol/protocol.proto
   </a>
   
     <nav class="md-nav">
@@ -678,6 +634,81 @@
           <li class="md-nav__item">
   <a href="#redisoptionreadstrategy" class="md-nav__link">
     RedisOption.ReadStrategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configserviceserviceproto" class="md-nav__link">
+    config/service/service.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstate" class="md-nav__link">
+    Endpoint.State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointtype" class="md-nav__link">
+    Endpoint.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configserviceconfigproto" class="md-nav__link">
+    config/service/config.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener" class="md-nav__link">
+    Listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancepolicy" class="md-nav__link">
+    LoadBalancePolicy
   </a>
   
 </li>
@@ -728,84 +759,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#serviceendpointproto" class="md-nav__link">
-    service/endpoint.proto
+  <a href="#apidiscoveryproto" class="md-nav__link">
+    api/discovery.proto
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#endpoint" class="md-nav__link">
-    Endpoint
+  <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
+    SvcConfigDiscoveryRequest
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpointstate" class="md-nav__link">
-    Endpoint.State
+  <a href="#svcconfigdiscoveryresponse" class="md-nav__link">
+    SvcConfigDiscoveryResponse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpointtype" class="md-nav__link">
-    Endpoint.Type
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serviceserviceproto" class="md-nav__link">
-    service/service.proto
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#service" class="md-nav__link">
-    Service
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serviceconfigproto" class="md-nav__link">
-    service/config.proto
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    Config
+  <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
+    SvcConfigDiscoveryResponse.UpdatedEntry
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#listener" class="md-nav__link">
-    Listener
+  <a href="#svcdiscoveryrequest" class="md-nav__link">
+    SvcDiscoveryRequest
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#loadbalancepolicy" class="md-nav__link">
-    LoadBalancePolicy
+  <a href="#svcdiscoveryresponse" class="md-nav__link">
+    SvcDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryrequest" class="md-nav__link">
+    SvcEndpointDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryresponse" class="md-nav__link">
+    SvcEndpointDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discoveryservice" class="md-nav__link">
+    DiscoveryService
   </a>
   
 </li>
@@ -873,77 +885,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#discoveryproto" class="md-nav__link">
-    discovery.proto
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
-    SvcConfigDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcconfigdiscoveryresponse" class="md-nav__link">
-    SvcConfigDiscoveryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
-    SvcConfigDiscoveryResponse.UpdatedEntry
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryrequest" class="md-nav__link">
-    SvcDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryresponse" class="md-nav__link">
-    SvcDiscoveryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcendpointdiscoveryrequest" class="md-nav__link">
-    SvcEndpointDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcendpointdiscoveryresponse" class="md-nav__link">
-    SvcEndpointDiscoveryResponse
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#discoveryservice" class="md-nav__link">
-    DiscoveryService
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#bootstrapbootstrapproto" class="md-nav__link">
-    bootstrap/bootstrap.proto
+  <a href="#configbootstrapbootstrapproto" class="md-nav__link">
+    config/bootstrap/bootstrap.proto
   </a>
   
     <nav class="md-nav">
@@ -1032,8 +975,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#hchcproto" class="md-nav__link">
-    hc/hc.proto
+  <a href="#confighchcproto" class="md-nav__link">
+    config/hc/hc.proto
   </a>
   
     <nav class="md-nav">
@@ -1087,8 +1030,8 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#protocolprotocolproto" class="md-nav__link">
-    protocol/protocol.proto
+  <a href="#configprotocolprotocolproto" class="md-nav__link">
+    config/protocol/protocol.proto
   </a>
   
     <nav class="md-nav">
@@ -1125,6 +1068,81 @@
           <li class="md-nav__item">
   <a href="#redisoptionreadstrategy" class="md-nav__link">
     RedisOption.ReadStrategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configserviceserviceproto" class="md-nav__link">
+    config/service/service.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#endpoint" class="md-nav__link">
+    Endpoint
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#service" class="md-nav__link">
+    Service
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointstate" class="md-nav__link">
+    Endpoint.State
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#endpointtype" class="md-nav__link">
+    Endpoint.Type
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#configserviceconfigproto" class="md-nav__link">
+    config/service/config.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#config" class="md-nav__link">
+    Config
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#listener" class="md-nav__link">
+    Listener
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#loadbalancepolicy" class="md-nav__link">
+    LoadBalancePolicy
   </a>
   
 </li>
@@ -1175,84 +1193,65 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#serviceendpointproto" class="md-nav__link">
-    service/endpoint.proto
+  <a href="#apidiscoveryproto" class="md-nav__link">
+    api/discovery.proto
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#endpoint" class="md-nav__link">
-    Endpoint
+  <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
+    SvcConfigDiscoveryRequest
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpointstate" class="md-nav__link">
-    Endpoint.State
+  <a href="#svcconfigdiscoveryresponse" class="md-nav__link">
+    SvcConfigDiscoveryResponse
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#endpointtype" class="md-nav__link">
-    Endpoint.Type
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serviceserviceproto" class="md-nav__link">
-    service/service.proto
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#service" class="md-nav__link">
-    Service
-  </a>
-  
-</li>
-        
-      </ul>
-    </nav>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#serviceconfigproto" class="md-nav__link">
-    service/config.proto
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
-  <a href="#config" class="md-nav__link">
-    Config
+  <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
+    SvcConfigDiscoveryResponse.UpdatedEntry
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#listener" class="md-nav__link">
-    Listener
+  <a href="#svcdiscoveryrequest" class="md-nav__link">
+    SvcDiscoveryRequest
   </a>
   
 </li>
         
           <li class="md-nav__item">
-  <a href="#loadbalancepolicy" class="md-nav__link">
-    LoadBalancePolicy
+  <a href="#svcdiscoveryresponse" class="md-nav__link">
+    SvcDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryrequest" class="md-nav__link">
+    SvcEndpointDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#svcendpointdiscoveryresponse" class="md-nav__link">
+    SvcEndpointDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#discoveryservice" class="md-nav__link">
+    DiscoveryService
   </a>
   
 </li>
@@ -1285,30 +1284,15 @@
             <article class="md-content__inner md-typeset">
               
                 
+                  <a href="http://github.com/samaritan-proxy/samaritan/edit/master/docs/proto-ref.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
+                
                 
                 <h1 id="protocol-documentation">Protocol Documentation<a class="headerlink" href="#protocol-documentation" title="Permanent link">&para;</a></h1>
 <p><a name="top"></a></p>
 <h2 id="table-of-contents">Table of Contents<a class="headerlink" href="#table-of-contents" title="Permanent link">&para;</a></h2>
 <ul>
 <li>
-<p><a href="#discovery.proto">discovery.proto</a></p>
-<ul>
-<li><a href="#discovery.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a></li>
-<li><a href="#discovery.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a></li>
-<li><a href="#discovery.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></li>
-<li><a href="#discovery.SvcDiscoveryRequest">SvcDiscoveryRequest</a></li>
-<li><a href="#discovery.SvcDiscoveryResponse">SvcDiscoveryResponse</a></li>
-<li><a href="#discovery.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a></li>
-<li>
-<p><a href="#discovery.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a></p>
-</li>
-<li>
-<p><a href="#discovery.DiscoveryService">DiscoveryService</a></p>
-</li>
-</ul>
-</li>
-<li>
-<p><a href="#bootstrap/bootstrap.proto">bootstrap/bootstrap.proto</a></p>
+<p><a href="#config/bootstrap/bootstrap.proto">config/bootstrap/bootstrap.proto</a></p>
 <ul>
 <li><a href="#bootstrap.Admin">Admin</a></li>
 <li><a href="#bootstrap.Bootstrap">Bootstrap</a></li>
@@ -1328,7 +1312,7 @@
 </ul>
 </li>
 <li>
-<p><a href="#hc/hc.proto">hc/hc.proto</a></p>
+<p><a href="#config/hc/hc.proto">config/hc/hc.proto</a></p>
 <ul>
 <li><a href="#hc.ATCPChecker">ATCPChecker</a></li>
 <li><a href="#hc.ATCPChecker.Action">ATCPChecker.Action</a></li>
@@ -1339,7 +1323,7 @@
 </ul>
 </li>
 <li>
-<p><a href="#protocol/protocol.proto">protocol/protocol.proto</a></p>
+<p><a href="#config/protocol/protocol.proto">config/protocol/protocol.proto</a></p>
 <ul>
 <li><a href="#protocol.MySQLOption">MySQLOption</a></li>
 <li><a href="#protocol.RedisOption">RedisOption</a></li>
@@ -1350,6 +1334,31 @@
 <p><a href="#protocol.Protocol">Protocol</a></p>
 </li>
 <li><a href="#protocol.RedisOption.ReadStrategy">RedisOption.ReadStrategy</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#config/service/service.proto">config/service/service.proto</a></p>
+<ul>
+<li><a href="#service.Endpoint">Endpoint</a></li>
+<li>
+<p><a href="#service.Service">Service</a></p>
+</li>
+<li>
+<p><a href="#service.Endpoint.State">Endpoint.State</a></p>
+</li>
+<li><a href="#service.Endpoint.Type">Endpoint.Type</a></li>
+</ul>
+</li>
+<li>
+<p><a href="#config/service/config.proto">config/service/config.proto</a></p>
+<ul>
+<li><a href="#service.Config">Config</a></li>
+<li>
+<p><a href="#service.Listener">Listener</a></p>
+</li>
+<li>
+<p><a href="#service.LoadBalancePolicy">LoadBalancePolicy</a></p>
+</li>
 </ul>
 </li>
 <li>
@@ -1365,32 +1374,19 @@
 </ul>
 </li>
 <li>
-<p><a href="#service/endpoint.proto">service/endpoint.proto</a></p>
+<p><a href="#api/discovery.proto">api/discovery.proto</a></p>
 <ul>
+<li><a href="#discovery.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a></li>
+<li><a href="#discovery.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a></li>
+<li><a href="#discovery.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></li>
+<li><a href="#discovery.SvcDiscoveryRequest">SvcDiscoveryRequest</a></li>
+<li><a href="#discovery.SvcDiscoveryResponse">SvcDiscoveryResponse</a></li>
+<li><a href="#discovery.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a></li>
 <li>
-<p><a href="#service.Endpoint">Endpoint</a></p>
+<p><a href="#discovery.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a></p>
 </li>
 <li>
-<p><a href="#service.Endpoint.State">Endpoint.State</a></p>
-</li>
-<li><a href="#service.Endpoint.Type">Endpoint.Type</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#service/service.proto">service/service.proto</a></p>
-<ul>
-<li><a href="#service.Service">Service</a></li>
-</ul>
-</li>
-<li>
-<p><a href="#service/config.proto">service/config.proto</a></p>
-<ul>
-<li><a href="#service.Config">Config</a></li>
-<li>
-<p><a href="#service.Listener">Listener</a></p>
-</li>
-<li>
-<p><a href="#service.LoadBalancePolicy">LoadBalancePolicy</a></p>
+<p><a href="#discovery.DiscoveryService">DiscoveryService</a></p>
 </li>
 </ul>
 </li>
@@ -1398,222 +1394,9 @@
 <p><a href="#scalar-value-types">Scalar Value Types</a></p>
 </li>
 </ul>
-<p><a name="discovery.proto"></a>
+<p><a name="config/bootstrap/bootstrap.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
-<h2 id="discoveryproto">discovery.proto<a class="headerlink" href="#discoveryproto" title="Permanent link">&para;</a></h2>
-<p><a name="discovery.SvcConfigDiscoveryRequest"></a></p>
-<h3 id="svcconfigdiscoveryrequest">SvcConfigDiscoveryRequest<a class="headerlink" href="#svcconfigdiscoveryrequest" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>svc_names_subscribe</td>
-<td><a href="#string">string</a></td>
-<td>repeated</td>
-<td>All service names that need to subscribe.</td>
-</tr>
-<tr>
-<td>svc_names_unsubscribe</td>
-<td><a href="#string">string</a></td>
-<td>repeated</td>
-<td>All service names that need to unsubscribe.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.SvcConfigDiscoveryResponse"></a></p>
-<h3 id="svcconfigdiscoveryresponse">SvcConfigDiscoveryResponse<a class="headerlink" href="#svcconfigdiscoveryresponse" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>updated</td>
-<td><a href="#discovery.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></td>
-<td>repeated</td>
-<td>Update of configuration.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.SvcConfigDiscoveryResponse.UpdatedEntry"></a></p>
-<h3 id="svcconfigdiscoveryresponseupdatedentry">SvcConfigDiscoveryResponse.UpdatedEntry<a class="headerlink" href="#svcconfigdiscoveryresponseupdatedentry" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>key</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>value</td>
-<td><a href="#service.Config">service.Config</a></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.SvcDiscoveryRequest"></a></p>
-<h3 id="svcdiscoveryrequest">SvcDiscoveryRequest<a class="headerlink" href="#svcdiscoveryrequest" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>instance</td>
-<td><a href="#common.Instance">common.Instance</a></td>
-<td></td>
-<td>Meta information of the current instance.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.SvcDiscoveryResponse"></a></p>
-<h3 id="svcdiscoveryresponse">SvcDiscoveryResponse<a class="headerlink" href="#svcdiscoveryresponse" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>added</td>
-<td><a href="#service.Service">service.Service</a></td>
-<td>repeated</td>
-<td>Added service.</td>
-</tr>
-<tr>
-<td>removed</td>
-<td><a href="#service.Service">service.Service</a></td>
-<td>repeated</td>
-<td>Removed service.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.SvcEndpointDiscoveryRequest"></a></p>
-<h3 id="svcendpointdiscoveryrequest">SvcEndpointDiscoveryRequest<a class="headerlink" href="#svcendpointdiscoveryrequest" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>svc_names_subscribe</td>
-<td><a href="#string">string</a></td>
-<td>repeated</td>
-<td>All service names that need to subscribe.</td>
-</tr>
-<tr>
-<td>svc_names_unsubscribe</td>
-<td><a href="#string">string</a></td>
-<td>repeated</td>
-<td>All service names that need to unsubscribe.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.SvcEndpointDiscoveryResponse"></a></p>
-<h3 id="svcendpointdiscoveryresponse">SvcEndpointDiscoveryResponse<a class="headerlink" href="#svcendpointdiscoveryresponse" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>svc_name</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Name of service which endpoints had updated.</td>
-</tr>
-<tr>
-<td>added</td>
-<td><a href="#service.Endpoint">service.Endpoint</a></td>
-<td>repeated</td>
-<td>Added endpoints.</td>
-</tr>
-<tr>
-<td>removed</td>
-<td><a href="#service.Endpoint">service.Endpoint</a></td>
-<td>repeated</td>
-<td>Removed endpoints.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="discovery.DiscoveryService"></a></p>
-<h3 id="discoveryservice">DiscoveryService<a class="headerlink" href="#discoveryservice" title="Permanent link">&para;</a></h3>
-<p>DiscoveryService is a service which is used to discover service, service config
-and service endpoints.</p>
-<table>
-<thead>
-<tr>
-<th>Method Name</th>
-<th>Request Type</th>
-<th>Response Type</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>StreamSvcs</td>
-<td><a href="#discovery.SvcDiscoveryRequest">SvcDiscoveryRequest</a></td>
-<td><a href="#discovery.SvcDiscoveryResponse">SvcDiscoveryResponse</a> stream</td>
-<td></td>
-</tr>
-<tr>
-<td>StreamSvcConfigs</td>
-<td><a href="#discovery.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a> stream</td>
-<td><a href="#discovery.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a> stream</td>
-<td></td>
-</tr>
-<tr>
-<td>StreamSvcEndpoints</td>
-<td><a href="#discovery.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a> stream</td>
-<td><a href="#discovery.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a> stream</td>
-<td></td>
-</tr>
-</tbody>
-</table>
-<p><a name="bootstrap/bootstrap.proto"></a>
-<p align="right"><a href="#top">Top</a></p></p>
-<h2 id="bootstrapbootstrapproto">bootstrap/bootstrap.proto<a class="headerlink" href="#bootstrapbootstrapproto" title="Permanent link">&para;</a></h2>
+<h2 id="configbootstrapbootstrapproto">config/bootstrap/bootstrap.proto<a class="headerlink" href="#configbootstrapbootstrapproto" title="Permanent link">&para;</a></h2>
 <p><a name="bootstrap.Admin"></a></p>
 <h3 id="admin">Admin<a class="headerlink" href="#admin" title="Permanent link">&para;</a></h3>
 <p>The admin message is required to configure the administration server.</p>
@@ -1928,9 +1711,9 @@ to a backing store.</p>
 </tr>
 </tbody>
 </table>
-<p><a name="hc/hc.proto"></a>
+<p><a name="config/hc/hc.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
-<h2 id="hchcproto">hc/hc.proto<a class="headerlink" href="#hchcproto" title="Permanent link">&para;</a></h2>
+<h2 id="confighchcproto">config/hc/hc.proto<a class="headerlink" href="#confighchcproto" title="Permanent link">&para;</a></h2>
 <p><a name="hc.ATCPChecker"></a></p>
 <h3 id="atcpchecker">ATCPChecker<a class="headerlink" href="#atcpchecker" title="Permanent link">&para;</a></h3>
 <p>ATCP checker config.</p>
@@ -2088,9 +1871,9 @@ and what the expected server returns.</p>
 <p><a name="hc.TCPChecker"></a></p>
 <h3 id="tcpchecker">TCPChecker<a class="headerlink" href="#tcpchecker" title="Permanent link">&para;</a></h3>
 <p>TCP checker config.</p>
-<p><a name="protocol/protocol.proto"></a>
+<p><a name="config/protocol/protocol.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
-<h2 id="protocolprotocolproto">protocol/protocol.proto<a class="headerlink" href="#protocolprotocolproto" title="Permanent link">&para;</a></h2>
+<h2 id="configprotocolprotocolproto">config/protocol/protocol.proto<a class="headerlink" href="#configprotocolprotocolproto" title="Permanent link">&para;</a></h2>
 <p><a name="protocol.MySQLOption"></a></p>
 <h3 id="mysqloption">MySQLOption<a class="headerlink" href="#mysqloption" title="Permanent link">&para;</a></h3>
 <p>MySQL protocol option.</p>
@@ -2180,75 +1963,12 @@ and what the expected server returns.</p>
 </tr>
 </tbody>
 </table>
-<p><a name="common/instance.proto"></a>
+<p><a name="config/service/service.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
-<h2 id="commoninstanceproto">common/instance.proto<a class="headerlink" href="#commoninstanceproto" title="Permanent link">&para;</a></h2>
-<p><a name="common.Instance"></a></p>
-<h3 id="instance">Instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>id</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>The id of this instance, if id is not define, it will generate by ip and admin port.</td>
-</tr>
-<tr>
-<td>version</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Version of this instance running now. This field is automatically populated by Samaritan does not require to specify by user.</td>
-</tr>
-<tr>
-<td>belong</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>The service name which this instance belongs to. It&#39;s required when you want to change the behavior of Sam at runtime, such as update proxy policy, update service endpoints, etc. If two instances belong to the same service, it will be treated in one group.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="common/address.proto"></a>
-<p align="right"><a href="#top">Top</a></p></p>
-<h2 id="commonaddressproto">common/address.proto<a class="headerlink" href="#commonaddressproto" title="Permanent link">&para;</a></h2>
-<p><a name="common.Address"></a></p>
-<h3 id="address">Address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>ip</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>IP address, IPv4 or IPv6.</td>
-</tr>
-<tr>
-<td>port</td>
-<td><a href="#uint32">uint32</a></td>
-<td></td>
-<td>Port, [0, 65535].</td>
-</tr>
-</tbody>
-</table>
-<p><a name="service/endpoint.proto"></a>
-<p align="right"><a href="#top">Top</a></p></p>
-<h2 id="serviceendpointproto">service/endpoint.proto<a class="headerlink" href="#serviceendpointproto" title="Permanent link">&para;</a></h2>
+<h2 id="configserviceserviceproto">config/service/service.proto<a class="headerlink" href="#configserviceserviceproto" title="Permanent link">&para;</a></h2>
 <p><a name="service.Endpoint"></a></p>
 <h3 id="endpoint">Endpoint<a class="headerlink" href="#endpoint" title="Permanent link">&para;</a></h3>
+<p>Endpoint represents an endpoint of service.</p>
 <table>
 <thead>
 <tr>
@@ -2276,6 +1996,27 @@ and what the expected server returns.</p>
 <td><a href="#service.Endpoint.Type">Endpoint.Type</a></td>
 <td></td>
 <td>Type of endpoints. When all hosts whose type is main are in the DOWN state, the host whose type is backup will be selected.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="service.Service"></a></p>
+<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
+<p>Service represents a service.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name of service.</td>
 </tr>
 </tbody>
 </table>
@@ -2330,33 +2071,9 @@ and what the expected server returns.</p>
 </tr>
 </tbody>
 </table>
-<p><a name="service/service.proto"></a>
+<p><a name="config/service/config.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
-<h2 id="serviceserviceproto">service/service.proto<a class="headerlink" href="#serviceserviceproto" title="Permanent link">&para;</a></h2>
-<p><a name="service.Service"></a></p>
-<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
-<p>Service represents a service.</p>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>name</td>
-<td><a href="#string">string</a></td>
-<td></td>
-<td>Name of service.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="service/config.proto"></a>
-<p align="right"><a href="#top">Top</a></p></p>
-<h2 id="serviceconfigproto">service/config.proto<a class="headerlink" href="#serviceconfigproto" title="Permanent link">&para;</a></h2>
+<h2 id="configserviceconfigproto">config/service/config.proto<a class="headerlink" href="#configserviceconfigproto" title="Permanent link">&para;</a></h2>
 <p><a name="service.Config"></a></p>
 <h3 id="config">Config<a class="headerlink" href="#config" title="Permanent link">&para;</a></h3>
 <p>Configuration of service,
@@ -2485,6 +2202,283 @@ contains configuration information required for the processor to run.</p>
 <td>CLUSTER_PROVIDED</td>
 <td>3</td>
 <td>Provided by redis cluster</td>
+</tr>
+</tbody>
+</table>
+<p><a name="common/instance.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="commoninstanceproto">common/instance.proto<a class="headerlink" href="#commoninstanceproto" title="Permanent link">&para;</a></h2>
+<p><a name="common.Instance"></a></p>
+<h3 id="instance">Instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>id</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The id of this instance, if id is not define, it will generate by ip and admin port.</td>
+</tr>
+<tr>
+<td>version</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Version of this instance running now. This field is automatically populated by Samaritan does not require to specify by user.</td>
+</tr>
+<tr>
+<td>belong</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>The service name which this instance belongs to. It&#39;s required when you want to change the behavior of Sam at runtime, such as update proxy policy, update service endpoints, etc. If two instances belong to the same service, it will be treated in one group.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="common/address.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="commonaddressproto">common/address.proto<a class="headerlink" href="#commonaddressproto" title="Permanent link">&para;</a></h2>
+<p><a name="common.Address"></a></p>
+<h3 id="address">Address<a class="headerlink" href="#address" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ip</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>IP address, IPv4 or IPv6.</td>
+</tr>
+<tr>
+<td>port</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>Port, [0, 65535].</td>
+</tr>
+</tbody>
+</table>
+<p><a name="api/discovery.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="apidiscoveryproto">api/discovery.proto<a class="headerlink" href="#apidiscoveryproto" title="Permanent link">&para;</a></h2>
+<p><a name="discovery.SvcConfigDiscoveryRequest"></a></p>
+<h3 id="svcconfigdiscoveryrequest">SvcConfigDiscoveryRequest<a class="headerlink" href="#svcconfigdiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svc_names_subscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to subscribe.</td>
+</tr>
+<tr>
+<td>svc_names_unsubscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to unsubscribe.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcConfigDiscoveryResponse"></a></p>
+<h3 id="svcconfigdiscoveryresponse">SvcConfigDiscoveryResponse<a class="headerlink" href="#svcconfigdiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>updated</td>
+<td><a href="#discovery.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></td>
+<td>repeated</td>
+<td>Update of configuration.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcConfigDiscoveryResponse.UpdatedEntry"></a></p>
+<h3 id="svcconfigdiscoveryresponseupdatedentry">SvcConfigDiscoveryResponse.UpdatedEntry<a class="headerlink" href="#svcconfigdiscoveryresponseupdatedentry" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>key</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>value</td>
+<td><a href="#service.Config">service.Config</a></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcDiscoveryRequest"></a></p>
+<h3 id="svcdiscoveryrequest">SvcDiscoveryRequest<a class="headerlink" href="#svcdiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#common.Instance">common.Instance</a></td>
+<td></td>
+<td>Meta information of the current instance.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcDiscoveryResponse"></a></p>
+<h3 id="svcdiscoveryresponse">SvcDiscoveryResponse<a class="headerlink" href="#svcdiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>added</td>
+<td><a href="#service.Service">service.Service</a></td>
+<td>repeated</td>
+<td>Added service.</td>
+</tr>
+<tr>
+<td>removed</td>
+<td><a href="#service.Service">service.Service</a></td>
+<td>repeated</td>
+<td>Removed service.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcEndpointDiscoveryRequest"></a></p>
+<h3 id="svcendpointdiscoveryrequest">SvcEndpointDiscoveryRequest<a class="headerlink" href="#svcendpointdiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svc_names_subscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to subscribe.</td>
+</tr>
+<tr>
+<td>svc_names_unsubscribe</td>
+<td><a href="#string">string</a></td>
+<td>repeated</td>
+<td>All service names that need to unsubscribe.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.SvcEndpointDiscoveryResponse"></a></p>
+<h3 id="svcendpointdiscoveryresponse">SvcEndpointDiscoveryResponse<a class="headerlink" href="#svcendpointdiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>svc_name</td>
+<td><a href="#string">string</a></td>
+<td></td>
+<td>Name of service which endpoints had updated.</td>
+</tr>
+<tr>
+<td>added</td>
+<td><a href="#service.Endpoint">service.Endpoint</a></td>
+<td>repeated</td>
+<td>Added endpoints.</td>
+</tr>
+<tr>
+<td>removed</td>
+<td><a href="#service.Endpoint">service.Endpoint</a></td>
+<td>repeated</td>
+<td>Removed endpoints.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="discovery.DiscoveryService"></a></p>
+<h3 id="discoveryservice">DiscoveryService<a class="headerlink" href="#discoveryservice" title="Permanent link">&para;</a></h3>
+<p>DiscoveryService is a service which is used to discover service, service config
+and service endpoints.</p>
+<table>
+<thead>
+<tr>
+<th>Method Name</th>
+<th>Request Type</th>
+<th>Response Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>StreamSvcs</td>
+<td><a href="#discovery.SvcDiscoveryRequest">SvcDiscoveryRequest</a></td>
+<td><a href="#discovery.SvcDiscoveryResponse">SvcDiscoveryResponse</a> stream</td>
+<td></td>
+</tr>
+<tr>
+<td>StreamSvcConfigs</td>
+<td><a href="#discovery.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a> stream</td>
+<td><a href="#discovery.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a> stream</td>
+<td></td>
+</tr>
+<tr>
+<td>StreamSvcEndpoints</td>
+<td><a href="#discovery.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a> stream</td>
+<td><a href="#discovery.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a> stream</td>
+<td></td>
 </tr>
 </tbody>
 </table>
