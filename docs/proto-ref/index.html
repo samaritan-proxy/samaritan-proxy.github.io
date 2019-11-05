@@ -384,6 +384,18 @@
   </li>
 
         
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../arch/protocol/redis/compression/" title="Compression" class="md-nav__link">
+      Compression
+    </a>
+  </li>
+
+        
       </ul>
     </nav>
   </li>
@@ -596,6 +608,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configprotocolredisredisproto" class="md-nav__link">
+    config/protocol/redis/redis.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compression" class="md-nav__link">
+    Compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compressionmethod" class="md-nav__link">
+    Compression.Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readstrategy" class="md-nav__link">
+    ReadStrategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configprotocolprotocolproto" class="md-nav__link">
     config/protocol/protocol.proto
   </a>
@@ -627,13 +673,6 @@
           <li class="md-nav__item">
   <a href="#protocol" class="md-nav__link">
     Protocol
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redisoptionreadstrategy" class="md-nav__link">
-    RedisOption.ReadStrategy
   </a>
   
 </li>
@@ -1030,6 +1069,40 @@
 </li>
       
         <li class="md-nav__item">
+  <a href="#configprotocolredisredisproto" class="md-nav__link">
+    config/protocol/redis/redis.proto
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#compression" class="md-nav__link">
+    Compression
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#compressionmethod" class="md-nav__link">
+    Compression.Method
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#readstrategy" class="md-nav__link">
+    ReadStrategy
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
   <a href="#configprotocolprotocolproto" class="md-nav__link">
     config/protocol/protocol.proto
   </a>
@@ -1061,13 +1134,6 @@
           <li class="md-nav__item">
   <a href="#protocol" class="md-nav__link">
     Protocol
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#redisoptionreadstrategy" class="md-nav__link">
-    RedisOption.ReadStrategy
   </a>
   
 </li>
@@ -1323,6 +1389,18 @@
 </ul>
 </li>
 <li>
+<p><a href="#config/protocol/redis/redis.proto">config/protocol/redis/redis.proto</a></p>
+<ul>
+<li>
+<p><a href="#redis.Compression">Compression</a></p>
+</li>
+<li>
+<p><a href="#redis.Compression.Method">Compression.Method</a></p>
+</li>
+<li><a href="#redis.ReadStrategy">ReadStrategy</a></li>
+</ul>
+</li>
+<li>
 <p><a href="#config/protocol/protocol.proto">config/protocol/protocol.proto</a></p>
 <ul>
 <li><a href="#protocol.MySQLOption">MySQLOption</a></li>
@@ -1333,7 +1411,6 @@
 <li>
 <p><a href="#protocol.Protocol">Protocol</a></p>
 </li>
-<li><a href="#protocol.RedisOption.ReadStrategy">RedisOption.ReadStrategy</a></li>
 </ul>
 </li>
 <li>
@@ -1871,6 +1948,94 @@ and what the expected server returns.</p>
 <p><a name="hc.TCPChecker"></a></p>
 <h3 id="tcpchecker">TCPChecker<a class="headerlink" href="#tcpchecker" title="Permanent link">&para;</a></h3>
 <p>TCP checker config.</p>
+<p><a name="config/protocol/redis/redis.proto"></a>
+<p align="right"><a href="#top">Top</a></p></p>
+<h2 id="configprotocolredisredisproto">config/protocol/redis/redis.proto<a class="headerlink" href="#configprotocolredisredisproto" title="Permanent link">&para;</a></h2>
+<p><a name="redis.Compression"></a></p>
+<h3 id="compression">Compression<a class="headerlink" href="#compression" title="Permanent link">&para;</a></h3>
+<p>Configuration of compression.</p>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>enable</td>
+<td><a href="#bool">bool</a></td>
+<td></td>
+<td>Switch of compress, default is off. NOTE: Uncompress will always work.</td>
+</tr>
+<tr>
+<td>method</td>
+<td><a href="#redis.Compression.Method">Compression.Method</a></td>
+<td></td>
+<td>Compression algorithm used in compression filter.</td>
+</tr>
+<tr>
+<td>threshold</td>
+<td><a href="#uint32">uint32</a></td>
+<td></td>
+<td>Value will be ignored when byte length of value is less than the threshold, must be greater than 0.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="redis.Compression.Method"></a></p>
+<h3 id="compressionmethod">Compression.Method<a class="headerlink" href="#compressionmethod" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>SNAPPY</td>
+<td>0</td>
+<td></td>
+</tr>
+<tr>
+<td>MOCK</td>
+<td>255</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+<p><a name="redis.ReadStrategy"></a></p>
+<h3 id="readstrategy">ReadStrategy<a class="headerlink" href="#readstrategy" title="Permanent link">&para;</a></h3>
+<p>Strategy of a read only command.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Number</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MASTER</td>
+<td>0</td>
+<td>Read from master nodes.</td>
+</tr>
+<tr>
+<td>SLAVE</td>
+<td>1</td>
+<td>Read from slave nodes.</td>
+</tr>
+<tr>
+<td>BOTH</td>
+<td>2</td>
+<td>Read from all nodes.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="config/protocol/protocol.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
 <h2 id="configprotocolprotocolproto">config/protocol/protocol.proto<a class="headerlink" href="#configprotocolprotocolproto" title="Permanent link">&para;</a></h2>
@@ -1892,9 +2057,15 @@ and what the expected server returns.</p>
 <tbody>
 <tr>
 <td>read_strategy</td>
-<td><a href="#protocol.RedisOption.ReadStrategy">RedisOption.ReadStrategy</a></td>
+<td><a href="#redis.ReadStrategy">redis.ReadStrategy</a></td>
 <td></td>
 <td>Strategy of a read only command.</td>
+</tr>
+<tr>
+<td>compression</td>
+<td><a href="#redis.Compression">redis.Compression</a></td>
+<td></td>
+<td>Configuration of compression.</td>
 </tr>
 </tbody>
 </table>
@@ -1932,34 +2103,6 @@ and what the expected server returns.</p>
 <td>Redis</td>
 <td>3</td>
 <td>Redis</td>
-</tr>
-</tbody>
-</table>
-<p><a name="protocol.RedisOption.ReadStrategy"></a></p>
-<h3 id="redisoptionreadstrategy">RedisOption.ReadStrategy<a class="headerlink" href="#redisoptionreadstrategy" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Name</th>
-<th>Number</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>MASTER</td>
-<td>0</td>
-<td>Read from master nodes.</td>
-</tr>
-<tr>
-<td>SLAVE</td>
-<td>1</td>
-<td>Read from slave nodes.</td>
-</tr>
-<tr>
-<td>BOTH</td>
-<td>2</td>
-<td>Read from all nodes.</td>
 </tr>
 </tbody>
 </table>
