@@ -2,57 +2,57 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
      <loc>https://samaritan-proxy.github.io/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/start/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/arch/overview/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/arch/admin-api/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/arch/stats/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/arch/protocol/tcp/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/arch/protocol/redis/redis/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/arch/protocol/redis/compression/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/changelog/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/proto-ref/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
     <url>
      <loc>https://samaritan-proxy.github.io/faq/</loc>
-     <lastmod>2019-11-15</lastmod>
+     <lastmod>2019-11-21</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
