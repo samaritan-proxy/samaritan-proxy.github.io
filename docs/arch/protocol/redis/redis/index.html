@@ -112,7 +112,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     
-      <a href="#redis-cluster" tabindex="1" class="md-skip">
+      <a href="#redis" tabindex="1" class="md-skip">
         Skip to content
       </a>
     
@@ -411,34 +411,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#redis-version" class="md-nav__link">
-    Redis Version
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modified-commands" class="md-nav__link">
-    Modified commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restricted-commands" class="md-nav__link">
-    Restricted commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unsupported-commands" class="md-nav__link">
-    Unsupported commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#statistics" class="md-nav__link">
     Statistics
   </a>
@@ -453,16 +425,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connection-model" class="md-nav__link">
-    Connection Model
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filter-filterchain" class="md-nav__link">
-    Filter &amp; FilterChain
+  <a href="#modified" class="md-nav__link">
+    Modified
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricted" class="md-nav__link">
+    Restricted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupported" class="md-nav__link">
+    Unsupported
   </a>
   
 </li>
@@ -567,34 +560,6 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#redis-version" class="md-nav__link">
-    Redis Version
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#modified-commands" class="md-nav__link">
-    Modified commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#restricted-commands" class="md-nav__link">
-    Restricted commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
-  <a href="#unsupported-commands" class="md-nav__link">
-    Unsupported commands
-  </a>
-  
-</li>
-      
-        <li class="md-nav__item">
   <a href="#statistics" class="md-nav__link">
     Statistics
   </a>
@@ -609,16 +574,37 @@
 </li>
       
         <li class="md-nav__item">
-  <a href="#connection-model" class="md-nav__link">
-    Connection Model
+  <a href="#requirements" class="md-nav__link">
+    Requirements
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#commands" class="md-nav__link">
+    Commands
   </a>
   
     <nav class="md-nav">
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#filter-filterchain" class="md-nav__link">
-    Filter &amp; FilterChain
+  <a href="#modified" class="md-nav__link">
+    Modified
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#restricted" class="md-nav__link">
+    Restricted
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#unsupported" class="md-nav__link">
+    Unsupported
   </a>
   
 </li>
@@ -647,60 +633,18 @@
                   <a href="http://github.com/samaritan-proxy/samaritan/edit/master/docs/arch/protocol/redis/redis.md" title="Edit this page" class="md-icon md-content__icon">&#xE3C9;</a>
                 
                 
-                <h1 id="redis-cluster">Redis Cluster<a class="headerlink" href="#redis-cluster" title="Permanent link">&para;</a></h1>
-<p>Redis Processor in samaritan serves as a <a href="https://redis.io/topics/cluster-spec">Redis Cluster</a> Proxy just as <a href="https://github.com/eleme/corvus">corvus</a>.</p>
-<p>It adapts the Redis Cluster Protocol to the Single Redis Protocol. In Redis Cluster Protocol, a client should be able to react to <code>MOVED</code> and <code>ASK</code> response while in a single redis protocol clients know nothing about sharding.</p>
-<div class="codehilite"><pre><span></span>Single Redis Protocol client -&gt; Redis Cluster Proxy -&gt; Redis Cluster
-</pre></div>
-
-
-<h2 id="redis-version">Redis Version<a class="headerlink" href="#redis-version" title="Permanent link">&para;</a></h2>
-<ul>
-<li>Supporting Redis &lt;= 4.x</li>
-</ul>
-<h2 id="modified-commands">Modified commands<a class="headerlink" href="#modified-commands" title="Permanent link">&para;</a></h2>
-<ul>
-<li><code>MGET</code>: split to multiple <code>GET</code>.</li>
-<li><code>MSET</code>: split to multiple <code>SET</code>.</li>
-<li><code>DEL</code>: split to multiple single key <code>DEL</code>.</li>
-<li><code>EXISTS</code>: split to multiple single key <code>EXISTS</code>.</li>
-<li><code>PING</code>: ignored and won't be forwarded.</li>
-<li><code>INFO</code>, <code>TIME</code>: won't be forwarded to backend redis, information collected in proxy
-   will be returned.</li>
-<li><code>AUTH</code>: do authentication in proxy.</li>
-<li><code>CONFIG</code>: support <code>get</code>, <code>set</code>, and <code>rewrite</code> sub-command to retrieve and manipulate corvus config.</li>
-<li><code>SELECT</code>: ignored if index is <code>0</code>, won't be forwarded.</li>
-</ul>
-<h2 id="restricted-commands">Restricted commands<a class="headerlink" href="#restricted-commands" title="Permanent link">&para;</a></h2>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>The following commands require all argument keys to belong to the same redis node.</p>
-</div>
-<ul>
-<li><code>EVAL</code>: At least one key should be given.</li>
-<li><code>SDIFF</code>, <code>SDIFFSTORE</code>, <code>SINTER</code>, <code>SINTERSTORE</code>, <code>SMOVE</code>, <code>SUNION</code>, <code>SUNIONSTORE</code>.</li>
-<li><code>ZINTERSTORE</code>, <code>ZUNIONSTORE</code>.</li>
-<li><code>PFCOUNTE</code>, <code>PFMERGE</code>.</li>
-</ul>
-<h2 id="unsupported-commands">Unsupported commands<a class="headerlink" href="#unsupported-commands" title="Permanent link">&para;</a></h2>
-<p>The following commands are not available, such as <code>KEYS</code>, we can't search keys across
-all backend redis instances.</p>
-<ul>
-<li><code>KEYS</code>, <code>MIGRATE</code>, <code>MOVE</code>, <code>OBJECT</code>, <code>RANDOMKEY</code>, <code>RENAME</code>, <code>RENAMENX</code>, <code>SCAN</code>, <code>WAIT</code>.</li>
-<li><code>BITOP</code>, <code>MSETNX</code></li>
-<li><code>BLPOP</code>, <code>BRPOP</code>, <code>BRPOPLPUSH</code>.</li>
-<li><code>PSUBSCRIBE</code>, <code>PUBLISH</code>, <code>PUBSUB</code>, <code>PUNSUBSCRIBE</code>, <code>SUBSCRIBE</code>, <code>UNSUBSCRIBE</code>.</li>
-<li><code>EVALSHA</code>, <code>SCRIPT</code>.</li>
-<li><code>DISCARD</code>, <code>EXEC</code>, <code>MULTI</code>, <code>UNWATCH</code>, <code>WATCH</code>.</li>
-<li><code>CLUSTER</code>.</li>
-<li><code>ECHO</code>, <code>QUIT</code>.</li>
-<li><code>BGREWRITEAOF</code>, <code>BGSAVE</code>, <code>CLIENT</code>, <code>COMMAND</code>, <code>CONFIG</code>, <code>DBSIZE</code>, <code>DEBUG</code>, <code>FLUSHALL</code>,
-   <code>FLUSHDB</code>, <code>LASTSAVE</code>, <code>MONITOR</code>, <code>ROLE</code>, <code>SAVE</code>, <code>SHUTDOWN</code>, <code>SLAVEOF</code>, <code>SYNC</code>.</li>
-<li><code>SLOWLOG</code></li>
-</ul>
+                <h1 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h1>
+<p>Redis proc in samaritan serves as a <a href="https://redis.io/topics/cluster-spec">Redis Cluster</a> Proxy just as <a href="https://github.com/eleme/corvus">corvus</a>.</p>
+<blockquote>
+<p>Most redis client implementations don't support redis cluster. We have a lot of services relying on redis, which are written in Python, Java, Go, Nodejs etc.
+It's hard to provide redis client libraries for multiple languages without breaking compatibilities. We used twemproxy before, but it relies on sentinel
+for high availabity, it also requires restarting to add or remove backend redis instances, which causes service interruption.
+And twemproxy is single threaded, we have to deploy multiple twemproxy instances for large number of clients, which causes the ops headaches.</p>
+</blockquote>
 <h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h2>
-<p><a href="/arch/stats/#statistics">statistics reference</a></p>
+<p>Provide detailed metrics about connection, request and per command, see <a href="/arch/stats#redis">here</a></p>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
+<p>The following figure illustrates the processing flow of a request.</p>
 <div class="codehilite"><pre><span></span>sequenceDiagram
     participant client as Client
     participant sess as Session
@@ -719,26 +663,55 @@ all backend redis instances.</p>
 </pre></div>
 
 
-<h2 id="connection-model">Connection Model<a class="headerlink" href="#connection-model" title="Permanent link">&para;</a></h2>
-<p>Samaritan only open a connection to redis and uses the pipeline to communicate.</p>
-<div class="codehilite"><pre><span></span>graph LR
-    Client-- N:N ---Samaritan
-    Samaritan-- 1:1 ---Redis
-</pre></div>
-
-
-<h3 id="filter-filterchain">Filter &amp; FilterChain<a class="headerlink" href="#filter-filterchain" title="Permanent link">&para;</a></h3>
-<p>Filter is used to extend the redis proc, which can modify or intercept requests.</p>
-<div class="codehilite"><pre><span></span><span class="kd">type</span> <span class="nx">Filter</span> <span class="kd">interface</span> <span class="p">{</span>
-    <span class="nx">Do</span><span class="p">(</span><span class="nx">req</span> <span class="o">*</span><span class="nx">simpleRequest</span><span class="p">)</span> <span class="nx">FilterStatus</span>
-    <span class="nx">Destroy</span><span class="p">()</span>
-<span class="p">}</span>
-</pre></div>
-
-
-<p>Filter chain is used to store filter.
-<code>Filter.Do</code> will be called by filter chain, if <code>FilterStatus</code> is <code>Stop</code>, 
-the filter chain will stop and the subsequent filters will be ignored.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<ol>
+<li>Only opens one conection to the same node of redis cluster, and <a href="https://redis.io/topics/pipelining">use pipelining</a> to process commands.</li>
+</ol>
+</div>
+<h2 id="requirements">Requirements<a class="headerlink" href="#requirements" title="Permanent link">&para;</a></h2>
+<ul>
+<li>Redis &lt;= 5.0</li>
+</ul>
+<h2 id="commands">Commands<a class="headerlink" href="#commands" title="Permanent link">&para;</a></h2>
+<h3 id="modified">Modified<a class="headerlink" href="#modified" title="Permanent link">&para;</a></h3>
+<ul>
+<li><code>MGET</code>: split to multiple <code>GET</code>.</li>
+<li><code>MSET</code>: split to multiple <code>SET</code>.</li>
+<li><code>DEL</code>: split to multiple single key <code>DEL</code>.</li>
+<li><code>EXISTS</code>: split to multiple single key <code>EXISTS</code>.</li>
+<li><code>PING</code>: ignored and won't be forwarded.</li>
+<li><code>INFO</code>, <code>TIME</code>: won't be forwarded to backend redis, information collected in proxy
+   will be returned.</li>
+<li><code>SELECT</code>: ignored if index is <code>0</code>, won't be forwarded.</li>
+</ul>
+<h3 id="restricted">Restricted<a class="headerlink" href="#restricted" title="Permanent link">&para;</a></h3>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>The following commands require all argument keys to belong to the same redis node.</p>
+</div>
+<ul>
+<li><code>EVAL</code>: At least one key should be given.</li>
+<li><code>SDIFF</code>, <code>SDIFFSTORE</code>, <code>SINTER</code>, <code>SINTERSTORE</code>, <code>SMOVE</code>, <code>SUNION</code>, <code>SUNIONSTORE</code>.</li>
+<li><code>ZINTERSTORE</code>, <code>ZUNIONSTORE</code>.</li>
+<li><code>PFCOUNTE</code>, <code>PFMERGE</code>.</li>
+</ul>
+<h3 id="unsupported">Unsupported<a class="headerlink" href="#unsupported" title="Permanent link">&para;</a></h3>
+<p>The following commands are not available, such as <code>KEYS</code>, we can't search keys across
+all backend redis instances.</p>
+<ul>
+<li><code>KEYS</code>, <code>MIGRATE</code>, <code>MOVE</code>, <code>OBJECT</code>, <code>RANDOMKEY</code>, <code>RENAME</code>, <code>RENAMENX</code>, <code>SCAN</code>, <code>WAIT</code>.</li>
+<li><code>BITOP</code>, <code>MSETNX</code></li>
+<li><code>BLPOP</code>, <code>BRPOP</code>, <code>BRPOPLPUSH</code>.</li>
+<li><code>PSUBSCRIBE</code>, <code>PUBLISH</code>, <code>PUBSUB</code>, <code>PUNSUBSCRIBE</code>, <code>SUBSCRIBE</code>, <code>UNSUBSCRIBE</code>.</li>
+<li><code>EVALSHA</code>, <code>SCRIPT</code>.</li>
+<li><code>DISCARD</code>, <code>EXEC</code>, <code>MULTI</code>, <code>UNWATCH</code>, <code>WATCH</code>.</li>
+<li><code>CLUSTER</code>.</li>
+<li><code>ECHO</code>.</li>
+<li><code>BGREWRITEAOF</code>, <code>BGSAVE</code>, <code>CLIENT</code>, <code>COMMAND</code>, <code>CONFIG</code>, <code>DBSIZE</code>, <code>DEBUG</code>, <code>FLUSHALL</code>,
+   <code>FLUSHDB</code>, <code>LASTSAVE</code>, <code>MONITOR</code>, <code>ROLE</code>, <code>SAVE</code>, <code>SHUTDOWN</code>, <code>SLAVEOF</code>, <code>SYNC</code>.</li>
+<li><code>SLOWLOG</code></li>
+</ul>
                 
                   
                 

@@ -345,28 +345,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#statistics" class="md-nav__link">
-    Statistics
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#global" class="md-nav__link">
     Global
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#runtime" class="md-nav__link">
     Runtime
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#service" class="md-nav__link">
     Service
   </a>
@@ -404,6 +396,28 @@
           <li class="md-nav__item">
   <a href="#redis" class="md-nav__link">
     Redis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global_1" class="md-nav__link">
+    global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-command" class="md-nav__link">
+    per command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upstream" class="md-nav__link">
+    upstream
   </a>
   
 </li>
@@ -575,28 +589,20 @@
     <ul class="md-nav__list" data-md-scrollfix>
       
         <li class="md-nav__item">
-  <a href="#statistics" class="md-nav__link">
-    Statistics
-  </a>
-  
-    <nav class="md-nav">
-      <ul class="md-nav__list">
-        
-          <li class="md-nav__item">
   <a href="#global" class="md-nav__link">
     Global
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#runtime" class="md-nav__link">
     Runtime
   </a>
   
 </li>
-        
-          <li class="md-nav__item">
+      
+        <li class="md-nav__item">
   <a href="#service" class="md-nav__link">
     Service
   </a>
@@ -634,6 +640,28 @@
           <li class="md-nav__item">
   <a href="#redis" class="md-nav__link">
     Redis
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#global_1" class="md-nav__link">
+    global
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#per-command" class="md-nav__link">
+    per command
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#upstream" class="md-nav__link">
+    upstream
   </a>
   
 </li>
@@ -683,8 +711,7 @@
 </li>
 </ul>
 </blockquote>
-<h2 id="statistics">Statistics<a class="headerlink" href="#statistics" title="Permanent link">&para;</a></h2>
-<h3 id="global">Global<a class="headerlink" href="#global" title="Permanent link">&para;</a></h3>
+<h2 id="global">Global<a class="headerlink" href="#global" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -701,7 +728,7 @@
 </tr>
 </tbody>
 </table>
-<h3 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h3>
+<h2 id="runtime">Runtime<a class="headerlink" href="#runtime" title="Permanent link">&para;</a></h2>
 <table>
 <thead>
 <tr>
@@ -803,9 +830,9 @@
 </tr>
 </tbody>
 </table>
-<h3 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h3>
-<h4 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h4>
-<h5 id="l4">L4<a class="headerlink" href="#l4" title="Permanent link">&para;</a></h5>
+<h2 id="service">Service<a class="headerlink" href="#service" title="Permanent link">&para;</a></h2>
+<h3 id="common">Common<a class="headerlink" href="#common" title="Permanent link">&para;</a></h3>
+<h4 id="l4">L4<a class="headerlink" href="#l4" title="Permanent link">&para;</a></h4>
 <p>prefix: service.{service_name}.</p>
 <table>
 <thead>
@@ -893,7 +920,7 @@
 </tr>
 </tbody>
 </table>
-<h5 id="l7">L7<a class="headerlink" href="#l7" title="Permanent link">&para;</a></h5>
+<h4 id="l7">L7<a class="headerlink" href="#l7" title="Permanent link">&para;</a></h4>
 <p>prefix: service.{service_name}.</p>
 <table>
 <thead>
@@ -976,8 +1003,9 @@
 </tr>
 </tbody>
 </table>
-<h4 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h4>
+<h3 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h3>
 <p>prefix: service.{service_name}.</p>
+<h4 id="global_1">global<a class="headerlink" href="#global_1" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
 <tr>
@@ -988,44 +1016,73 @@
 </thead>
 <tbody>
 <tr>
-<td>slots_refresh.total</td>
+<td>rq_slow_total</td>
+<td>Counter</td>
+<td>slow request count, default latency threshold is 50ms</td>
+</tr>
+</tbody>
+</table>
+<h4 id="per-command">per command<a class="headerlink" href="#per-command" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>redis.{command}.total</td>
+<td>Counter</td>
+<td>command count</td>
+</tr>
+<tr>
+<td>redis.{command}.success</td>
+<td>Counter</td>
+<td>command success count</td>
+</tr>
+<tr>
+<td>redis.{command}.error</td>
+<td>Counter</td>
+<td>command error count</td>
+</tr>
+<tr>
+<td>redis.{command}.latency_micros</td>
+<td>Histogram</td>
+<td>command latency in micros</td>
+</tr>
+</tbody>
+</table>
+<h4 id="upstream">upstream<a class="headerlink" href="#upstream" title="Permanent link">&para;</a></h4>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>upstream.moved</td>
+<td>Counter</td>
+<td>moved request count</td>
+</tr>
+<tr>
+<td>upstream.slots_refresh.total</td>
 <td>Counter</td>
 <td>slots refresh total count</td>
 </tr>
 <tr>
-<td>slots_refresh.success_total</td>
+<td>upstream.slots_refresh.success_total</td>
 <td>Counter</td>
 <td>slots refresh success count</td>
 </tr>
 <tr>
-<td>slots_refresh.failure_total</td>
+<td>upstream.slots_refresh.failure_total</td>
 <td>Counter</td>
 <td>slots refresh failure count</td>
-</tr>
-<tr>
-<td>redis.{COMMAND}.total</td>
-<td>Counter</td>
-<td>{COMMAND} total count</td>
-</tr>
-<tr>
-<td>redis.{COMMAND}.success</td>
-<td>Counter</td>
-<td>{COMMAND} success count</td>
-</tr>
-<tr>
-<td>redis.{COMMAND}.error</td>
-<td>Counter</td>
-<td>{COMMAND} error count</td>
-</tr>
-<tr>
-<td>redis.{COMMAND}.latency_micros</td>
-<td>Histogram</td>
-<td>{COMMAND} latency micros</td>
-</tr>
-<tr>
-<td>redis.moved</td>
-<td>Counter</td>
-<td>MOVED count</td>
 </tr>
 </tbody>
 </table>
