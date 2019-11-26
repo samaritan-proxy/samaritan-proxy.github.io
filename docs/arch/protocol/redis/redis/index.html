@@ -684,6 +684,7 @@ And twemproxy is single threaded, we have to deploy multiple twemproxy instances
 <li><code>INFO</code>, <code>TIME</code>: won't be forwarded to backend redis, information collected in proxy
    will be returned.</li>
 <li><code>SELECT</code>: ignored if index is <code>0</code>, won't be forwarded.</li>
+<li><code>SCAN</code>: scan one by one until all of them are scanned.</li>
 </ul>
 <h3 id="restricted">Restricted<a class="headerlink" href="#restricted" title="Permanent link">&para;</a></h3>
 <div class="admonition warning">
