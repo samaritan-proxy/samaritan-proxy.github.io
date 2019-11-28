@@ -806,6 +806,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dependencydiscoveryrequest" class="md-nav__link">
+    DependencyDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencydiscoveryresponse" class="md-nav__link">
+    DependencyDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
     SvcConfigDiscoveryRequest
   </a>
@@ -822,20 +836,6 @@
           <li class="md-nav__item">
   <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
     SvcConfigDiscoveryResponse.UpdatedEntry
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryrequest" class="md-nav__link">
-    SvcDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryresponse" class="md-nav__link">
-    SvcDiscoveryResponse
   </a>
   
 </li>
@@ -1267,6 +1267,20 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
+  <a href="#dependencydiscoveryrequest" class="md-nav__link">
+    DependencyDiscoveryRequest
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#dependencydiscoveryresponse" class="md-nav__link">
+    DependencyDiscoveryResponse
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#svcconfigdiscoveryrequest" class="md-nav__link">
     SvcConfigDiscoveryRequest
   </a>
@@ -1283,20 +1297,6 @@
           <li class="md-nav__item">
   <a href="#svcconfigdiscoveryresponseupdatedentry" class="md-nav__link">
     SvcConfigDiscoveryResponse.UpdatedEntry
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryrequest" class="md-nav__link">
-    SvcDiscoveryRequest
-  </a>
-  
-</li>
-        
-          <li class="md-nav__item">
-  <a href="#svcdiscoveryresponse" class="md-nav__link">
-    SvcDiscoveryResponse
   </a>
   
 </li>
@@ -1453,11 +1453,11 @@
 <li>
 <p><a href="#api/discovery.proto">api/discovery.proto</a></p>
 <ul>
+<li><a href="#api.DependencyDiscoveryRequest">DependencyDiscoveryRequest</a></li>
+<li><a href="#api.DependencyDiscoveryResponse">DependencyDiscoveryResponse</a></li>
 <li><a href="#api.SvcConfigDiscoveryRequest">SvcConfigDiscoveryRequest</a></li>
 <li><a href="#api.SvcConfigDiscoveryResponse">SvcConfigDiscoveryResponse</a></li>
 <li><a href="#api.SvcConfigDiscoveryResponse.UpdatedEntry">SvcConfigDiscoveryResponse.UpdatedEntry</a></li>
-<li><a href="#api.SvcDiscoveryRequest">SvcDiscoveryRequest</a></li>
-<li><a href="#api.SvcDiscoveryResponse">SvcDiscoveryResponse</a></li>
 <li><a href="#api.SvcEndpointDiscoveryRequest">SvcEndpointDiscoveryRequest</a></li>
 <li>
 <p><a href="#api.SvcEndpointDiscoveryResponse">SvcEndpointDiscoveryResponse</a></p>
@@ -2415,6 +2415,52 @@ contains configuration information required for the processor to run.</p>
 <p><a name="api/discovery.proto"></a>
 <p align="right"><a href="#top">Top</a></p></p>
 <h2 id="apidiscoveryproto">api/discovery.proto<a class="headerlink" href="#apidiscoveryproto" title="Permanent link">&para;</a></h2>
+<p><a name="api.DependencyDiscoveryRequest"></a></p>
+<h3 id="dependencydiscoveryrequest">DependencyDiscoveryRequest<a class="headerlink" href="#dependencydiscoveryrequest" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>instance</td>
+<td><a href="#common.Instance">common.Instance</a></td>
+<td></td>
+<td>Meta information of the current instance.</td>
+</tr>
+</tbody>
+</table>
+<p><a name="api.DependencyDiscoveryResponse"></a></p>
+<h3 id="dependencydiscoveryresponse">DependencyDiscoveryResponse<a class="headerlink" href="#dependencydiscoveryresponse" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>Field</th>
+<th>Type</th>
+<th>Label</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>added</td>
+<td><a href="#service.Service">service.Service</a></td>
+<td>repeated</td>
+<td>Added service.</td>
+</tr>
+<tr>
+<td>removed</td>
+<td><a href="#service.Service">service.Service</a></td>
+<td>repeated</td>
+<td>Removed service.</td>
+</tr>
+</tbody>
+</table>
 <p><a name="api.SvcConfigDiscoveryRequest"></a></p>
 <h3 id="svcconfigdiscoveryrequest">SvcConfigDiscoveryRequest<a class="headerlink" href="#svcconfigdiscoveryrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -2487,52 +2533,6 @@ contains configuration information required for the processor to run.</p>
 </tr>
 </tbody>
 </table>
-<p><a name="api.SvcDiscoveryRequest"></a></p>
-<h3 id="svcdiscoveryrequest">SvcDiscoveryRequest<a class="headerlink" href="#svcdiscoveryrequest" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>instance</td>
-<td><a href="#common.Instance">common.Instance</a></td>
-<td></td>
-<td>Meta information of the current instance.</td>
-</tr>
-</tbody>
-</table>
-<p><a name="api.SvcDiscoveryResponse"></a></p>
-<h3 id="svcdiscoveryresponse">SvcDiscoveryResponse<a class="headerlink" href="#svcdiscoveryresponse" title="Permanent link">&para;</a></h3>
-<table>
-<thead>
-<tr>
-<th>Field</th>
-<th>Type</th>
-<th>Label</th>
-<th>Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>added</td>
-<td><a href="#service.Service">service.Service</a></td>
-<td>repeated</td>
-<td>Added service.</td>
-</tr>
-<tr>
-<td>removed</td>
-<td><a href="#service.Service">service.Service</a></td>
-<td>repeated</td>
-<td>Removed service.</td>
-</tr>
-</tbody>
-</table>
 <p><a name="api.SvcEndpointDiscoveryRequest"></a></p>
 <h3 id="svcendpointdiscoveryrequest">SvcEndpointDiscoveryRequest<a class="headerlink" href="#svcendpointdiscoveryrequest" title="Permanent link">&para;</a></h3>
 <table>
@@ -2593,8 +2593,8 @@ contains configuration information required for the processor to run.</p>
 </table>
 <p><a name="api.DiscoveryService"></a></p>
 <h3 id="discoveryservice">DiscoveryService<a class="headerlink" href="#discoveryservice" title="Permanent link">&para;</a></h3>
-<p>DiscoveryService is a service which is used to discover service, service config
-and service endpoints.</p>
+<p>DiscoveryService is a service which is used to discover service, service
+config and service endpoints.</p>
 <table>
 <thead>
 <tr>
@@ -2606,9 +2606,9 @@ and service endpoints.</p>
 </thead>
 <tbody>
 <tr>
-<td>StreamSvcs</td>
-<td><a href="#api.SvcDiscoveryRequest">SvcDiscoveryRequest</a></td>
-<td><a href="#api.SvcDiscoveryResponse">SvcDiscoveryResponse</a> stream</td>
+<td>StreamDependencies</td>
+<td><a href="#api.DependencyDiscoveryRequest">DependencyDiscoveryRequest</a></td>
+<td><a href="#api.DependencyDiscoveryResponse">DependencyDiscoveryResponse</a> stream</td>
 <td></td>
 </tr>
 <tr>
