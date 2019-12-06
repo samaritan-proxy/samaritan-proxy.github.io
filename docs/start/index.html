@@ -977,7 +977,31 @@ $ docker-compose up
 
 <p>You could see the response: <code>hello, world!</code></p>
 <h3 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h3>
-<p>TBD</p>
+<p>In this example, we show how to use Samaritan as a redis cluster proxy.</p>
+<p><strong>Step1: Start all containers including redis-cluster and proxy</strong></p>
+<div class="codehilite"><pre><span></span>$ git clone --depth <span class="m">1</span> https://github.com/samaritan-proxy/samaritan.git /tmp/samaritan
+$ <span class="nb">cd</span> /tmp/samaritan/examples/redis
+$ docker-compose up
+</pre></div>
+
+
+<p><strong>Step2: Issue commands using <a href="https://redis.io/topics/rediscli">redis-cli</a></strong></p>
+<div class="codehilite"><pre><span></span>$ redis-cli <span class="nb">set</span> a <span class="m">1</span>
+OK
+$ redis-cli get a
+<span class="s2">&quot;1&quot;</span>
+$ redis-cli mset a <span class="m">1</span> b <span class="m">2</span>
+OK
+$ redis-cli mget a b
+<span class="m">1</span><span class="o">)</span> <span class="s2">&quot;1&quot;</span>
+<span class="m">2</span><span class="o">)</span> <span class="s2">&quot;2&quot;</span>
+$ redis-cli --scan
+b
+a
+</pre></div>
+
+
+<p>All supported commands could found in <a href="https://samaritan-proxy.github.io/docs/arch/protocol/redis/redis/#commands">here</a>.</p>
                 
                   
                 
