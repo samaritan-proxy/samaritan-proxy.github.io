@@ -381,6 +381,26 @@
     Examples
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -688,6 +708,26 @@
     Examples
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#tcp" class="md-nav__link">
+    TCP
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#redis" class="md-nav__link">
+    Redis
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -920,6 +960,23 @@ The communication way between them is grpc, and <a href="../proto-ref/#discovery
 It is still private now, but we will open source as soon as possible.</p>
 </div>
 <h2 id="examples">Examples<a class="headerlink" href="#examples" title="Permanent link">&para;</a></h2>
+<p>We have created some sandboxes using <a href="https://docs.docker.com/">Docker</a> and <a href="https://docs.docker.com/compose/">Docker Compose</a> to show how to use Samaritan. To run them, please make sure you have docker and docker-compose installed.</p>
+<h3 id="tcp">TCP<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h3>
+<p>In this example, we show how to use Samaritan as a L4 proxy.</p>
+<p><strong>Step 1: Start all containers including http-server and proxy</strong></p>
+<div class="codehilite"><pre><span></span>$ git clone --depth <span class="m">1</span> https://github.com/samaritan-proxy/samaritan.git /tmp/samaritan
+$ <span class="nb">cd</span> /tmp/samaritan/examples/tcp
+$ docker-compose up
+</pre></div>
+
+
+<p><strong>Step 2: View http://127.0.0.1 using curl or browser</strong></p>
+<div class="codehilite"><pre><span></span>$ curl http://127.0.0.1
+</pre></div>
+
+
+<p>You could see the response: <code>hello, world!</code></p>
+<h3 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h3>
 <p>TBD</p>
                 
                   
