@@ -606,7 +606,7 @@
 <p><strong>Samaritan (səˈmerətn)</strong> is a client side proxy that works on L4 or L7 layer written by golang, provide high availability and load balancing.
 You can call it <strong>Sam (sam)</strong> for simplicity.</p>
 <h2 id="why">Why<a class="headerlink" href="#why" title="Permanent link">&para;</a></h2>
-<p>At the beginning of our adapting to <a href="or [Microservices] if that make more sense to you">SOA</a>, we used <a href="http://www.haproxy.org">HAProxy</a> as a client-side load balancer.
+<p>At the beginning of our adapting to <a href="https://en.wikipedia.org/wiki/Service-oriented_architecture">SOA</a> (or <a href="https://en.wikipedia.org/wiki/Microservices">Microservices</a> if that make more sense to you), we used <a href="http://www.haproxy.org">HAProxy</a> as a client-side load balancer.
 It does the job, painfully, as we have to do a file-based re-configuration whenever a change happens to the back-end nodes.</p>
 <p>The maintenance of the configuration file really hurts our OPs a lot, not to mention that a reload to HAProxy causes downtime.
 This issue is so popular that people created things like <a href="https://github.com/airbnb/synapse">Synapse</a> and <a href="https://github.com/QubitProducts/bamboo">Bamboo</a> to manage HAProxy instances, even <a href="http://engineeringblog.yelp.com/2015/04/true-zero-downtime-haproxy-reloads.html">hack deeply to minimize the downtime caused by HAProxy reload</a>.
