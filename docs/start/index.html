@@ -755,12 +755,12 @@
 <h3 id="pre-built-binaries">Pre-built binaries<a class="headerlink" href="#pre-built-binaries" title="Permanent link">&para;</a></h3>
 <p>It's the fastest way, you can choose the appropriate binaries from <a href="https://github.com/samaritan-proxy/samaritan/releases">release page</a>.</p>
 <p>Assuming your os system is darwin and platform is amd64, you can use the following command to download and install.</p>
-<div class="codehilite"><pre><span></span>$ <span class="nv">VERSION</span><span class="o">=</span><span class="m">1</span>.0.0 <span class="nv">OS</span><span class="o">=</span>darwin <span class="nv">ARCH</span><span class="o">=</span>amd64 curl -fsSL <span class="se">\</span>
+<div class="codehilite"><pre><span></span><code>$ <span class="nv">VERSION</span><span class="o">=</span><span class="m">1</span>.0.0 <span class="nv">OS</span><span class="o">=</span>darwin <span class="nv">ARCH</span><span class="o">=</span>amd64 curl -fsSL <span class="se">\</span>
     https://github.com/samaritan-proxy/samaritan/releases/download/v<span class="nv">$VERSION</span>/samaritan<span class="nv">$VERSION</span>.<span class="nv">$OS</span>-<span class="nv">$ARCH</span>.tar.gz <span class="se">\</span>
     -o /tmp/samaritan-<span class="nv">$VERSION</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
     tar -zxvf /tmp/samaritan-<span class="nv">$VERSION</span>.tar.gz <span class="o">&amp;&amp;</span> <span class="se">\</span>
     install /tmp/samaritan-<span class="nv">$VERSION</span>/samaritan /usr/local/bin
-</pre></div>
+</code></pre></div>
 
 
 <div class="admonition note">
@@ -775,16 +775,16 @@ it from the source code. This first needs <em><a href="https://golang.org">Go</a
 <p>The master branch is in continuous development and has not undergone the extensive testing and verification. There may be
 some unknown problems, please do not use it directly for production.</p>
 </div>
-<div class="codehilite"><pre><span></span>$ git clone https://github.com/samaritan-proxy/samaritan.git
+<div class="codehilite"><pre><span></span><code>$ git clone https://github.com/samaritan-proxy/samaritan.git
 $ <span class="nb">cd</span> samaritan <span class="o">&amp;&amp;</span> make
 $ install ./bin/samaritan /usr/local/bin
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="running-simple-example">Running simple example<a class="headerlink" href="#running-simple-example" title="Permanent link">&para;</a></h2>
 <p>The following is an example of using Sam as a L4 layer TCP proxy to access <a href="http://example.com">example.com</a></p>
 <p>Terminal 1</p>
-<div class="codehilite"><pre><span></span>$ <span class="c1"># resolve example.com, get ip</span>
+<div class="codehilite"><pre><span></span><code>$ <span class="c1"># resolve example.com, get ip</span>
 $ <span class="nv">ip</span><span class="o">=</span><span class="k">$(</span>dig +short example.com <span class="p">|</span> head -1<span class="k">)</span>
 $ <span class="c1"># generate config file</span>
 $ sudo bash -c <span class="s1">&#39;cat &gt; /etc/samaritan.yaml&#39;</span> <span class="s">&lt;&lt;EOF</span>
@@ -818,7 +818,7 @@ I <span class="m">2019</span>/10/18 <span class="m">15</span>:10:38.070534 samar
 I <span class="m">2019</span>/10/18 <span class="m">15</span>:10:38.072735 monitor.go:48: health check config is null, healthy check will disable
 I <span class="m">2019</span>/10/18 <span class="m">15</span>:10:38.074646 controller.go:110: Add processor exmaple
 I <span class="m">2019</span>/10/18 <span class="m">15</span>:10:38.093603 listener.go:105: <span class="o">[</span>exmaple<span class="o">]</span> start serving at <span class="m">0</span>.0.0.0:8080
-</pre></div>
+</code></pre></div>
 
 
 <div class="admonition tip">
@@ -826,7 +826,7 @@ I <span class="m">2019</span>/10/18 <span class="m">15</span>:10:38.093603 liste
 <p>You could store the config file anywhere you like and can find.</p>
 </div>
 <p>Terminal 2</p>
-<div class="codehilite"><pre><span></span>$ curl -v -I -H <span class="s2">&quot;Host: example.com&quot;</span> http://127.0.0.1:8080
+<div class="codehilite"><pre><span></span><code>$ curl -v -I -H <span class="s2">&quot;Host: example.com&quot;</span> http://127.0.0.1:8080
 * Rebuilt URL to: http://127.0.0.1:8080/
 *   Trying <span class="m">127</span>.0.0.1...
 * TCP_NODELAY <span class="nb">set</span>
@@ -861,7 +861,7 @@ Content-Length: <span class="m">1256</span>
 
 &lt;
 * Connection <span class="c1">#0 to host 127.0.0.1 left intact</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>As you can see, we visited <a href="http://example.com">example.com</a> via Sam.</p>
@@ -871,10 +871,10 @@ it, you may be overwhelmed. For better understanding, we will show you the speci
 <h3 id="instance">instance<a class="headerlink" href="#instance" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#instance">instance message</a> is used to specify the environment in which the instance is located, and will be reported to
 the management server.</p>
-<div class="codehilite"><pre><span></span><span class="nt">instance</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">instance</span><span class="p">:</span>
   <span class="nt">id</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">ip_port</span>
   <span class="nt">belong</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">sash</span>
-</pre></div>
+</code></pre></div>
 
 
 <div class="admonition warning">
@@ -883,12 +883,12 @@ the management server.</p>
 </div>
 <h3 id="log">log<a class="headerlink" href="#log" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#log">log message</a> is used to specify the log level and output destination.</p>
-<div class="codehilite"><pre><span></span><span class="nt">log</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">log</span><span class="p">:</span>
   <span class="nt">level</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">INFO</span>
   <span class="nt">output</span><span class="p">:</span>
     <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">SYSLOG</span>
     <span class="nt">target</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1:514</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>If it is omitted, the log level will be <em>INFO</em> and the message will be printed to terminal.</p>
@@ -902,28 +902,28 @@ the management server.</p>
 </div>
 <h3 id="stats">stats<a class="headerlink" href="#stats" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#stats">stats message</a> is used to specify the stats config include internal metrics config and sinks.</p>
-<div class="codehilite"><pre><span></span><span class="nt">stats</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">stats</span><span class="p">:</span>
   <span class="nt">sinks</span><span class="p">:</span>
     <span class="p p-Indicator">-</span> <span class="nt">type</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">STATSD</span>
       <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com:8125</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>If it is omitted, the internal metrics wouldn't flush to any <em>TSDB</em> except <a href="https://prometheus.io">Prometheus</a> which could still be visited via <code>/amin/stats/prometheus</code>.
 <a href="https://prometheus.io">Prometheus</a> is sufficient for most users which means you could omit the stats config directly.</p>
 <h3 id="admin">admin<a class="headerlink" href="#admin" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#admin">admin message</a> is used to specify the configuration for local admin api.</p>
-<div class="codehilite"><pre><span></span><span class="nt">admin</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">admin</span><span class="p">:</span>
   <span class="nt">bind</span><span class="p">:</span>
     <span class="nt">ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">127.0.0.1</span>
     <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">12345</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>It's required, otherwise the entire process cannot be started. More details about admin api, you can view <a href="">doc</a></p>
 <h3 id="static-services">static services<a class="headerlink" href="#static-services" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#staticservice">static service message</a> is used to specify the static service including name, proxy strategy and endpoints.</p>
-<div class="codehilite"><pre><span></span><span class="nt">static_services</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">static_services</span><span class="p">:</span>
   <span class="p p-Indicator">-</span> <span class="nt">name</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com</span>
     <span class="nt">config</span><span class="p">:</span>
       <span class="nt">listener</span><span class="p">:</span>
@@ -935,7 +935,7 @@ the management server.</p>
       <span class="p p-Indicator">-</span> <span class="nt">address</span><span class="p">:</span>
           <span class="nt">ip</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">93.184.216.34</span>
           <span class="nt">port</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">80</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>You can use it to configure the proxy's services in a local development environment, but it is not recommended.
@@ -947,9 +947,9 @@ Here are the reasons:</p>
 <p>The correct and recommended way is to use dynamic source, which will be described in detail below.</p>
 <h3 id="dynamic-source">dynamic source<a class="headerlink" href="#dynamic-source" title="Permanent link">&para;</a></h3>
 <p>The <a href="../proto-ref/#bootstrap.ConfigSource">dynamic source message</a> is used to specify the dynamic source configuration.</p>
-<div class="codehilite"><pre><span></span><span class="nt">dynamic_source_config</span><span class="p">:</span>
+<div class="codehilite"><pre><span></span><code><span class="nt">dynamic_source_config</span><span class="p">:</span>
   <span class="nt">endpoint</span><span class="p">:</span> <span class="l l-Scalar l-Scalar-Plain">example.com:80</span>
-</pre></div>
+</code></pre></div>
 
 
 <p>Once the dynamic source is configured, Sam could know and apply the changes of instance's dependent services, service's proxy policy and service's endpoints in real time.
@@ -964,29 +964,29 @@ It is still private now, but we will open source as soon as possible.</p>
 <h3 id="tcp">TCP<a class="headerlink" href="#tcp" title="Permanent link">&para;</a></h3>
 <p>In this example, we show how to use Samaritan as a L4 proxy.</p>
 <p><strong>Step 1: Start all containers including http-server and proxy</strong></p>
-<div class="codehilite"><pre><span></span>$ git clone --depth <span class="m">1</span> https://github.com/samaritan-proxy/samaritan.git /tmp/samaritan
+<div class="codehilite"><pre><span></span><code>$ git clone --depth <span class="m">1</span> https://github.com/samaritan-proxy/samaritan.git /tmp/samaritan
 $ <span class="nb">cd</span> /tmp/samaritan/examples/tcp
 $ docker-compose up
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>Step 2: View http://127.0.0.1 using curl or browser</strong></p>
-<div class="codehilite"><pre><span></span>$ curl http://127.0.0.1
-</pre></div>
+<div class="codehilite"><pre><span></span><code>$ curl http://127.0.0.1
+</code></pre></div>
 
 
 <p>You could see the response: <code>hello, world!</code></p>
 <h3 id="redis">Redis<a class="headerlink" href="#redis" title="Permanent link">&para;</a></h3>
 <p>In this example, we show how to use Samaritan as a redis cluster proxy.</p>
 <p><strong>Step1: Start all containers including redis-cluster and proxy</strong></p>
-<div class="codehilite"><pre><span></span>$ git clone --depth <span class="m">1</span> https://github.com/samaritan-proxy/samaritan.git /tmp/samaritan
+<div class="codehilite"><pre><span></span><code>$ git clone --depth <span class="m">1</span> https://github.com/samaritan-proxy/samaritan.git /tmp/samaritan
 $ <span class="nb">cd</span> /tmp/samaritan/examples/redis
 $ docker-compose up
-</pre></div>
+</code></pre></div>
 
 
 <p><strong>Step2: Issue commands using <a href="https://redis.io/topics/rediscli">redis-cli</a></strong></p>
-<div class="codehilite"><pre><span></span>$ redis-cli <span class="nb">set</span> a <span class="m">1</span>
+<div class="codehilite"><pre><span></span><code>$ redis-cli <span class="nb">set</span> a <span class="m">1</span>
 OK
 $ redis-cli get a
 <span class="s2">&quot;1&quot;</span>
@@ -998,7 +998,7 @@ $ redis-cli mget a b
 $ redis-cli --scan
 b
 a
-</pre></div>
+</code></pre></div>
 
 
 <p>All supported commands could found in <a href="https://samaritan-proxy.github.io/docs/arch/protocol/redis/redis/#commands">here</a>.</p>

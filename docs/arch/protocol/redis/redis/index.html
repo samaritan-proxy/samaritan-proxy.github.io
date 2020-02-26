@@ -659,7 +659,7 @@ And twemproxy is single threaded, we have to deploy multiple twemproxy instances
 <p>Provide detailed metrics about connection, request and per command, see <a href="/arch/stats#redis">here</a></p>
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
 <p>The following figure illustrates the processing flow of a request.</p>
-<div class="codehilite"><pre><span></span>sequenceDiagram
+<div class="codehilite"><pre><span></span><code>sequenceDiagram
     participant client as Client
     participant sess as Session
     participant node as Node
@@ -674,7 +674,7 @@ And twemproxy is single threaded, we have to deploy multiple twemproxy instances
     node -&gt;&gt; node: handle error
     node --&gt;&gt; sess: finish request
     sess -&gt;&gt; client: send response
-</pre></div>
+</code></pre></div>
 
 
 <div class="admonition note">

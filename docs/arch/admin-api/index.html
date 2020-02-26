@@ -578,7 +578,7 @@
                 <h1 id="admin-api">Admin API<a class="headerlink" href="#admin-api" title="Permanent link">&para;</a></h1>
 <h2 id="get-config"><code>GET</code> <code>/config</code><a class="headerlink" href="#get-config" title="Permanent link">&para;</a></h2>
 <p>Return all configuration info.</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span>
   <span class="nt">&quot;admin&quot;</span><span class="p">:</span> <span class="p">{</span>
     <span class="nt">&quot;bind&quot;</span><span class="p">:</span> <span class="p">{</span>
       <span class="nt">&quot;ip&quot;</span><span class="p">:</span> <span class="s2">&quot;0.0.0.0&quot;</span><span class="p">,</span>
@@ -624,18 +624,18 @@
     <span class="p">}</span>
   <span class="p">}</span>
 <span class="p">}</span>
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="get-opsshutdown"><code>GET</code> <code>/ops/shutdown</code><a class="headerlink" href="#get-opsshutdown" title="Permanent link">&para;</a></h2>
 <p>Immediately shut down the Samaritan.</p>
-<div class="codehilite"><pre><span></span><span class="p">{</span><span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">}</span>
-</pre></div>
+<div class="codehilite"><pre><span></span><code><span class="p">{</span><span class="nt">&quot;msg&quot;</span><span class="p">:</span> <span class="s2">&quot;OK&quot;</span><span class="p">}</span>
+</code></pre></div>
 
 
 <h2 id="get-stats"><code>GET</code> <code>/stats</code><a class="headerlink" href="#get-stats" title="Permanent link">&para;</a></h2>
 <p>Return all statistics for local debugging.</p>
-<div class="codehilite"><pre><span></span>live: 1
+<div class="codehilite"><pre><span></span><code>live: 1
 runtime.alloc_bytes: 2222568
 runtime.frees: 23281
 runtime.gc_pause_total_ms: 0
@@ -644,19 +644,19 @@ runtime.goroutines: 10
 runtime.heap_alloc_bytes: 2222568
 runtime.heap_idle_bytes: 62750720
 ...
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="get-statsprometheus"><code>GET</code> <code>/stats/prometheus</code><a class="headerlink" href="#get-statsprometheus" title="Permanent link">&para;</a></h2>
 <p>Return /stats in <a href="https://prometheus.io/docs/instrumenting/exposition_formats/">Prometheus format</a>.</p>
-<div class="codehilite"><pre><span></span># TYPE samaritan_service_downstream_cx_active gauge
+<div class="codehilite"><pre><span></span><code># TYPE samaritan_service_downstream_cx_active gauge
 samaritan_service_downstream_cx_active{hostname=&quot;localhost&quot;,service_name=&quot;service_01&quot;} 0
 # TYPE samaritan_service_upstream_cx_active gauge
 samaritan_service_upstream_cx_active{hostname=&quot;localhost&quot;,service_name=&quot;service_01&quot;} 0
 # TYPE samaritan_live gauge
 samaritan_live{hostname=&quot;localhost&quot;} 1
 ...
-</pre></div>
+</code></pre></div>
                 
                   
                 

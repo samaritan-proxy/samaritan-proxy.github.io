@@ -627,7 +627,7 @@
 <h2 id="hot-reloader">Hot Reloader<a class="headerlink" href="#hot-reloader" title="Permanent link">&para;</a></h2>
 <p>Responsible for smooth upgrades to Samaritan without downtime, use <a href="https://lwn.net/Articles/542629/">SO_REUSEPORT</a>.</p>
 <p>The new Samaritan instance use UNIX socket to communicate with the old samaritan instance.</p>
-<div class="codehilite"><pre><span></span>sequenceDiagram
+<div class="codehilite"><pre><span></span><code>sequenceDiagram
    participant new as New Samaritan
    participant old as Old Samaritan
    new -&gt;&gt; old: Dail to UNIX socket
@@ -640,11 +640,11 @@
    old -&gt;&gt; old: Drain listeners
    new -&gt;&gt; old: Terminate parent request
    old -&gt;&gt; old: Terminate
-</pre></div>
+</code></pre></div>
 
 
 <h2 id="workflow">Workflow<a class="headerlink" href="#workflow" title="Permanent link">&para;</a></h2>
-<div class="codehilite"><pre><span></span>sequenceDiagram
+<div class="codehilite"><pre><span></span><code>sequenceDiagram
     participant cfg as Config
     participant ctl as Controller
     participant proc as Proc
@@ -658,7 +658,7 @@
     ctl -&gt;&gt; proc: Call OnSvcConfigUpdate()
     cfg -&gt;&gt; ctl: Del service event
     ctl -&gt;&gt; -proc: Call Stop()
-</pre></div>
+</code></pre></div>
                 
                   
                 
